@@ -1,1 +1,121 @@
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #fdfaf6;
+  color: #333;
+}
 
+header {
+  background-color: #fff;
+  padding: 20px 0;
+  border-bottom: 2px solid #eee;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Baloo 2', cursive;
+  color: #4a706e;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #4a706e;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.hero {
+  background-color: #e7f1ef;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.5rem;
+  color: #4a706e;
+}
+
+.btn-secondary {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #cda4a1;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.features {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.features h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Baloo 2', cursive;
+  color: #4a706e;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.icon-box {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.about-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: #fdf1ee;
+  padding: 40px 20px;
+}
+
+.about-preview img {
+  border-radius: 50%;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #eee;
+  font-size: 0.9rem;
+}
