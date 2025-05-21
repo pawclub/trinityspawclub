@@ -8,79 +8,90 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <h1 class="logo">Trinity’s Paw Club</h1>
+
+  <!-- Sticky Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Trinity’s Paw Club</div>
       <nav>
-        <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#booking">Booking</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact">Contact</a></li>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#booking">Booking</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a href="#" class="btn-primary">Book a Visit</a>
+      <a href="#booking" class="btn-primary">Book a Visit</a>
     </div>
   </header>
 
-  <section class="hero">
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
     <div class="container">
       <h2>Welcome to Trinity’s Paw Club — Personalized Care for Your Pets</h2>
       <p>This Isn’t Just Pet Care—It’s Club Life: Pet Edition.</p>
-      <a href="#" class="btn-secondary">See Services</a>
+      <a href="#services" class="btn-secondary">See Services</a>
     </div>
   </section>
 
-  <section id="services" class="features">
+  <!-- Services -->
+  <section id="services" class="section">
     <div class="container">
       <h3>What I Offer</h3>
-      <div class="icons">
-        <div class="icon-box"><span>Overnight Pet Sitting</span></div>
-        <div class="icon-box"><span>Drop-ins</span></div>
-        <div class="icon-box"><span>Daycare</span></div>
-        <div class="icon-box"><span>Dog Walking</span></div>
-        <div class="icon-box"><span>Special Requests</span></div>
+      <div class="services-grid">
+        <div class="service-box">Overnight Pet Sitting</div>
+        <div class="service-box">Drop-ins</div>
+        <div class="service-box">Daycare</div>
+        <div class="service-box">Dog Walking</div>
+        <div class="service-box">Special Requests</div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about-preview">
-    <div class="container">
+  <!-- About -->
+  <section id="about" class="section light">
+    <div class="container about-flex">
       <img src="https://via.placeholder.com/150" alt="Pet club placeholder image" width="150" height="150" />
       <div>
         <h3>Hi, I’m Trinity!</h3>
         <p>Caring for animals isn’t just my job — it’s my passion.</p>
-        <a href="#" class="btn-secondary">More About Me</a>
+        <a href="#about" class="btn-secondary">More About Me</a>
       </div>
     </div>
   </section>
 
-  <footer>
+  <!-- Booking -->
+  <section id="booking" class="section">
+    <div class="container">
+      <h3>Booking</h3>
+      <p>Booking details coming soon...</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section light">
+    <div class="container">
+      <h3>Testimonials</h3>
+      <p>Client stories and reviews will go here.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h3>Contact</h3>
+      <p>Contact form or info will go here.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
     <div class="container">
       <p>&copy; 2025 Trinity’s Paw Club | Serving pets with love</p>
     </div>
   </footer>
+
 </body>
 </html>
-<section id="booking" class="placeholder">
-  <div class="container">
-    <h3>Booking</h3>
-    <p>Booking details coming soon...</p>
-  </div>
-</section>
-
-<section id="testimonials" class="placeholder">
-  <div class="container">
-    <h3>Testimonials</h3>
-    <p>Client stories and reviews will go here.</p>
-  </div>
-</section>
-
-<section id="contact" class="placeholder">
-  <div class="container">
-    <h3>Contact</h3>
-    <p>Contact form or info will go here.</p>
-  </div>
-</section>
