@@ -293,3 +293,56 @@ button:focus {
   outline: 3px solid #d98592;
   outline-offset: 2px;
 }
+/* --- New Service Section Bubble Styles --- */
+
+.services-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-category {
+  background-color: #ffffff;
+  border: 1.5px solid #607d5f;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(96, 125, 95, 0.12);
+}
+
+.service-category h4 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.5rem;
+  color: #607d5f;
+  margin-bottom: 0.25rem;
+}
+
+.service-category .subheading {
+  font-size: 0.95rem;
+  color: #888888;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.service-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+  color: #3a3a3a;
+}
+
+.service-list li:last-child {
+  border-bottom: none;
+}
+
+.service-list span.price {
+  font-weight: 600;
+  color: #d98592;
+}
