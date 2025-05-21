@@ -1,3 +1,4 @@
+/* Base styles */
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
@@ -21,6 +22,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .logo {
@@ -35,6 +38,7 @@ nav ul {
   gap: 20px;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -43,24 +47,13 @@ nav a {
   font-weight: bold;
 }
 
+/* Buttons */
 .btn-primary {
   background-color: #4a706e;
   color: #fff;
   padding: 10px 16px;
   border-radius: 5px;
   text-decoration: none;
-}
-
-.hero {
-  background-color: #e7f1ef;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.hero h2 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 2.5rem;
-  color: #4a706e;
 }
 
 .btn-secondary {
@@ -73,6 +66,20 @@ nav a {
   text-decoration: none;
 }
 
+/* Hero Section */
+.hero {
+  background-color: #e7f1ef;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.5rem;
+  color: #4a706e;
+}
+
+/* Features Section */
 .features {
   padding: 40px 20px;
   background-color: #fff;
@@ -100,6 +107,7 @@ nav a {
   text-align: center;
 }
 
+/* About Section */
 .about-preview {
   display: flex;
   align-items: center;
@@ -107,15 +115,58 @@ nav a {
   gap: 30px;
   background-color: #fdf1ee;
   padding: 40px 20px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .about-preview img {
   border-radius: 50%;
+  max-width: 150px;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 20px 0;
   background-color: #eee;
   font-size: 0.9rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .about-preview {
+    flex-direction: column;
+    text-align: center;
+  }
 }
