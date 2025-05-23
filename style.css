@@ -346,3 +346,6 @@ button:focus {
   font-weight: 600;
   color: #d98592;
 }
+.hero h2 {
+  color: #4a675a; /* replace this with your original color */
+}
