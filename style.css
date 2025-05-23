@@ -346,3 +346,94 @@ button:focus {
   font-weight: 600;
   color: #d98592;
 }
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f9f9f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Baloo 2', cursive;
+  color: #1d7764;
+  margin-bottom: 0.5rem;
+}
+
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #1d7764;
+}
+
+.services-page {
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.services-section h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-left: 6px solid #78c4b5; /* accent color */
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h2 {
+  font-size: 1.4rem;
+  color: #2d5243;
+}
+
+.subheading {
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 400;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-card ul li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-card ul li span {
+  font-weight: 600;
+  color: #444;
+  font-family: 'Lato', sans-serif;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1rem;
+}
