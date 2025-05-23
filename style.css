@@ -349,3 +349,74 @@ button:focus {
 .hero h2 {
   color: #4a675a; /* replace this with your original color */
 }
+.contact-page {
+  padding: 3rem 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #4a675a;
+  background: #f9f6f1;
+  min-height: 70vh;
+}
+
+.contact-page h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #3c5231;
+}
+
+.contact-page p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #3c5231;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #a7b49d;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  background: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4a675a;
+  outline: none;
+}
+
+.btn-primary {
+  align-self: flex-start;
+  background-color: #4a675a;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #3c5231;
+  outline: none;
+}
