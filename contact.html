@@ -1,32 +1,144 @@
-<section class="section contact-section">
-  <div class="container">
-    <h3>Contact Me</h3>
-    <form action="https://formsubmit.co/your-email@example.com" method="POST" class="contact-form">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me</title>
 
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-      </div>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Lato&display=swap" rel="stylesheet">
 
-      <div class="form-group">
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" />
-      </div>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
 
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: #fdfdfc;
+      color: #3a3a3a;
+    }
 
-      <!-- Optional: Thank you redirect -->
-      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html" />
-      <input type="hidden" name="_captcha" value="false" />
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
 
-      <button type="submit" class="btn-secondary">Send Message</button>
-    </form>
-  </div>
-</section>
+    .contact-section {
+      background-color: #f3f5f2;
+      padding: 4rem 1rem;
+    }
+
+    .contact-section h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #607d5f;
+      text-align: center;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #3a3a3a;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #c3d1c0;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: 'Lato', sans-serif;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #d98592;
+      box-shadow: 0 0 0 3px rgba(217, 133, 146, 0.2);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button[type="submit"] {
+      margin-top: 1rem;
+      display: inline-block;
+      background-color: #607d5f;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button[type="submit"]:hover {
+      background-color: #50694f;
+    }
+
+    @media (max-width: 600px) {
+      .contact-form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section contact-section">
+    <div class="container">
+      <h3>Contact Me</h3>
+      <form action="https://formsubmit.co/your-email@example.com" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <!-- Hidden inputs -->
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <button type="submit" class="btn-secondary">Send Message</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
