@@ -571,3 +571,24 @@ button:focus {
     padding: 1.5rem;
   }
 }
+.back-home {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.back-home a.btn-secondary {
+  background-color: #d98592;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.back-home a.btn-secondary:hover,
+.back-home a.btn-secondary:focus {
+  background-color: #c36e7d;
+  outline: none;
+}
