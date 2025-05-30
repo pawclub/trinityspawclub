@@ -1,39 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Trinity’s Paw Club</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Lato&display=swap" rel="stylesheet" />
-</head>
-<body>
+<form action="https://formsubmit.co/your-email@example.com" method="POST">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br><br>
 
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">← Back to Home</a>
-    </div>
-  </header>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
 
-  <main class="contact-page section">
-    <div class="container">
-      <h1>Contact Trinity’s Paw Club</h1>
-      <p>Have questions or want to book a visit? Reach out anytime — I’m here to help!</p>
+  <label for="phone">Phone Number:</label><br>
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890"><br><br>
 
-      <form action="YOUR_FORM_HANDLER_URL" method="POST" class="contact-form" aria-label="Contact form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your name" />
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" rows="5" required></textarea><br><br>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+  <!-- Redirect after submission -->
+  <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Write your message here"></textarea>
+  <!-- Optional: prevent spam -->
+  <input type="hidden" name="_captcha" value="false">
 
-        <button type="submit" class="btn-primary">Send Message</button>
-      </form>
-    </div>
-  </main>
-
-</body>
-</html>
+  <button type="submit" class="btn-secondary">Send Message</button>
+</form>
