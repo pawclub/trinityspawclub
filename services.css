@@ -19,10 +19,12 @@ h1, h2, h3 {
 }
 
 .logo {
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem; /* or your preferred size */
+  color: #607d5f;    /* or your preferred color */
+  user-select: none;
   text-decoration: none;
-  color: #1d7764;
+
 }
 
 .services-page {
