@@ -37,7 +37,7 @@ body {
 
 /* Logo */
 .logo {
-  font-family: 'Baloo 2', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
   color: #607d5f; /* sage green */
   user-select: none;
@@ -146,20 +146,17 @@ a.btn-secondary:focus {
 
 /* Responsive Navigation */
 @media (max-width: 768px) {
-  /* Show hamburger */
   #menu-toggle {
     display: flex;
   }
 
-  /* Hide desktop Book a Visit */
   a.btn-primary.desktop-book-btn {
     display: none;
   }
 
-  /* Hide nav links by default */
   nav ul.nav-links {
     position: fixed;
-    top: 64px; /* height of header approx */
+    top: 64px;
     right: 0;
     width: 220px;
     height: calc(100% - 64px);
@@ -174,7 +171,6 @@ a.btn-secondary:focus {
     overflow-y: auto;
   }
 
-  /* Show menu when active */
   nav ul.nav-links.active {
     transform: translateX(0);
   }
@@ -189,7 +185,6 @@ a.btn-secondary:focus {
     color: #3a3a3a;
   }
 
-  /* Mobile Book a Visit Button inside menu */
   a.btn-primary.mobile-book-btn {
     display: inline-block;
     background-color: #d98592;
@@ -218,7 +213,7 @@ a.btn-secondary:focus {
 }
 
 .hero h2 {
-  font-family: 'Baloo 2', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 0.75rem;
   line-height: 1.2;
@@ -241,6 +236,7 @@ a.btn-secondary:focus {
 body {
   font-family: 'Poppins', sans-serif;
 }
+
 /* Services Grid */
 .services-grid {
   display: grid;
@@ -317,7 +313,7 @@ button:focus {
 }
 
 .service-category h4 {
-  font-family: 'Baloo 2', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   color: #607d5f;
   margin-bottom: 0.25rem;
@@ -502,7 +498,7 @@ button:focus {
    Testimonials Section
    ====================== */
 .testimonials-section {
-  background-color: #fdfaf6; /* soft neutral background */
+  background-color: #fdfaf6;
   padding: 4rem 1rem;
   color: #333;
 }
@@ -512,7 +508,7 @@ button:focus {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 0.5rem;
-  color: #2f4f4f; /* deep sage or charcoal */
+  color: #2f4f4f;
 }
 
 .section-intro {
@@ -551,19 +547,17 @@ button:focus {
   text-align: right;
   font-size: 0.95rem;
 }
+
 /* ======================
    About Page Styles
    ====================== */
-
-/* Override cursive font */
 .about-cta .btn-primary,
 .about-book-btn {
   font-family: 'Poppins', sans-serif !important;
 }
 
-/* Styled About Page Button */
 .about-book-btn {
-  background-color: #607d5f; /* soft sage green */
+  background-color: #607d5f;
   color: #ffffff;
   padding: 0.6rem 1.5rem;
   border: none;
