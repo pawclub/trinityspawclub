@@ -711,3 +711,6 @@ button:focus {
 .back-home .btn-secondary:hover {
   background-color: #a8d2c8;
 } 
+.book {
+  font-family: 'Open Sans', sans-serif;
+}
