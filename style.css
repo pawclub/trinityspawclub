@@ -238,6 +238,9 @@ a.btn-secondary:focus {
   background-color: #f3f5f2;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
 /* Services Grid */
 .services-grid {
   display: grid;
