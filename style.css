@@ -170,10 +170,12 @@ a.btn-primary.mobile-book-btn:focus {
 }
 
 .hero h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
   margin-bottom: 0.75rem;
-  line-height: 1.2;
+  line-height: 1.3;
+
 }
 
 .hero p {
