@@ -170,7 +170,7 @@ a.btn-primary.mobile-book-btn:focus {
 }
 .hero h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.2rem;     /* Try adjusting this size */
+  font-size: 3.1rem;     /* Try adjusting this size */
   font-weight: 400;      /* Medium weight – less bold */
   color: #4f6a4e;        /* Sage green or other lighter shade */
   margin-bottom: 0.75rem;
