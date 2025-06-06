@@ -168,15 +168,13 @@ a.btn-primary.mobile-book-btn:focus {
   padding: 6rem 1rem 4rem;
   text-align: center;
 }
-
 .hero h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 4rem;
-  font-weight: 200;
-  color: #a3bca5;  /* lighter version of your current green */
+  font-size: 3rem;           /* Smaller than before */
+  font-weight: 400;          /* Normal weight, not too thin */
+  color: #4A7C59;            /* A soft, medium sage green */
   margin-bottom: 0.75rem;
   line-height: 1.2;
-
 }
 
 .hero p {
