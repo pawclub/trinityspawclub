@@ -37,9 +37,9 @@ body {
 
 /* Logo */
 .logo {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Baloo 2', sans-serif;
   font-size: 1.8rem;
-  color: #607d5f;
+  color: #607d5f; /* sage green */
   user-select: none;
 }
 
@@ -60,7 +60,7 @@ nav ul.nav-links li a {
 
 nav ul.nav-links li a:hover,
 nav ul.nav-links li a:focus {
-  color: #d98592;
+  color: #d98592; /* blush pink */
   outline: none;
 }
 
@@ -87,7 +87,7 @@ a.btn-primary.desktop-book-btn:focus {
 /* Buttons used inside page */
 a.btn-secondary {
   display: inline-block;
-  background-color: #607d5f;
+  background-color: #607d5f; /* sage green */
   color: white;
   padding: 0.5rem 1.25rem;
   border-radius: 30px;
@@ -131,6 +131,7 @@ a.btn-secondary:focus {
   transition: all 0.3s ease;
 }
 
+/* Animate hamburger to X when active */
 #menu-toggle.active .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -145,17 +146,20 @@ a.btn-secondary:focus {
 
 /* Responsive Navigation */
 @media (max-width: 768px) {
+  /* Show hamburger */
   #menu-toggle {
     display: flex;
   }
 
+  /* Hide desktop Book a Visit */
   a.btn-primary.desktop-book-btn {
     display: none;
   }
 
+  /* Hide nav links by default */
   nav ul.nav-links {
     position: fixed;
-    top: 64px;
+    top: 64px; /* height of header approx */
     right: 0;
     width: 220px;
     height: calc(100% - 64px);
@@ -170,6 +174,7 @@ a.btn-secondary:focus {
     overflow-y: auto;
   }
 
+  /* Show menu when active */
   nav ul.nav-links.active {
     transform: translateX(0);
   }
@@ -184,6 +189,7 @@ a.btn-secondary:focus {
     color: #3a3a3a;
   }
 
+  /* Mobile Book a Visit Button inside menu */
   a.btn-primary.mobile-book-btn {
     display: inline-block;
     background-color: #d98592;
@@ -212,7 +218,7 @@ a.btn-secondary:focus {
 }
 
 .hero h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Baloo 2', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 0.75rem;
   line-height: 1.2;
@@ -284,14 +290,14 @@ a.btn-secondary:focus {
   user-select: none;
 }
 
-/* Accessibility */
+/* Accessibility focus outline */
 a:focus,
 button:focus {
   outline: 3px solid #d98592;
   outline-offset: 2px;
 }
 
-/* Service Bubble Section */
+/* --- New Service Section Bubble Styles --- */
 .services-wrapper {
   display: flex;
   flex-direction: column;
@@ -308,7 +314,7 @@ button:focus {
 }
 
 .service-category h4 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Baloo 2', sans-serif;
   font-size: 1.5rem;
   color: #607d5f;
   margin-bottom: 0.25rem;
@@ -344,7 +350,9 @@ button:focus {
   color: #d98592;
 }
 
-/* Contact Section */
+/* ======================
+   Contact Form Section
+   ====================== */
 .contact-section {
   background-color: #f3f5f2;
   padding: 4rem 1rem;
@@ -358,6 +366,7 @@ button:focus {
   text-align: center;
 }
 
+/* Contact Form */
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
@@ -427,7 +436,9 @@ button:focus {
   }
 }
 
-/* Back to Home Button */
+/* ======================
+   Back to Home Button (on pages)
+   ====================== */
 .back-home {
   text-align: center;
   margin-top: 2rem;
@@ -450,7 +461,9 @@ button:focus {
   outline: none;
 }
 
-/* Booking Section */
+/* ======================
+   Booking Section
+   ====================== */
 .booking-section {
   padding: 4rem 2rem;
 }
@@ -482,9 +495,11 @@ button:focus {
   font-family: 'Lato', sans-serif;
 }
 
-/* Testimonials */
+/* ======================
+   Testimonials Section
+   ====================== */
 .testimonials-section {
-  background-color: #fdfaf6;
+  background-color: #fdfaf6; /* soft neutral background */
   padding: 4rem 1rem;
   color: #333;
 }
@@ -494,7 +509,7 @@ button:focus {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 0.5rem;
-  color: #2f4f4f;
+  color: #2f4f4f; /* deep sage or charcoal */
 }
 
 .section-intro {
@@ -532,4 +547,36 @@ button:focus {
   color: #888;
   text-align: right;
   font-size: 0.95rem;
+}
+/* ======================
+   About Page Styles
+   ====================== */
+
+/* Override cursive font */
+.about-cta .btn-primary,
+.about-book-btn {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Styled About Page Button */
+.about-book-btn {
+  background-color: #607d5f; /* soft sage green */
+  color: #ffffff;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-book-btn:hover,
+.about-book-btn:focus {
+  background-color: #50694f;
+  transform: translateY(-2px);
+  outline: none;
 }
