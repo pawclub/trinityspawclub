@@ -622,3 +622,22 @@ button:focus {
   border-radius: 8px;
   font-family: 'Lato', sans-serif;
 }
+.testimonial-card {
+  background-color: #f7f7f7;
+  border-left: 4px solid #a1d5c4; /* sage green or your accent color */
+  padding: 1.2em 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 8px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0.5em;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #444;
+  font-size: 0.95rem;
+}
