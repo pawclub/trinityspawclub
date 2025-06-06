@@ -7,7 +7,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Baloo 2', cursive;
+  font-family: 'Poppins', sans-serif;
   color: #1d7764;
   margin-bottom: 0.5rem;
 }
@@ -24,7 +24,6 @@ h1, h2, h3 {
   color: #607d5f;
   user-select: none;
   text-decoration: none;
-
 }
 
 .services-page {
@@ -56,6 +55,7 @@ h1, h2, h3 {
 .service-card h2 {
   font-size: 1.4rem;
   color: #2d5243;
+  font-family: 'Poppins', sans-serif;
 }
 
 .subheading {
@@ -64,6 +64,7 @@ h1, h2, h3 {
   font-weight: 400;
   margin-top: -0.5rem;
   margin-bottom: 1rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .service-card ul {
@@ -90,4 +91,5 @@ h1, h2, h3 {
   font-size: 0.85rem;
   color: #888;
   margin-top: 1rem;
+  font-family: 'Lato', sans-serif;
 }
