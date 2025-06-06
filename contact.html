@@ -16,7 +16,7 @@
   <section class="section contact-section">
     <div class="container">
       <h3>Contact Me</h3>
-      <form action="https://formsubmit.co/your-email@example.com" method="POST" class="contact-form">
+      <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form">
         <div class="form-group">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
@@ -24,7 +24,7 @@
 
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="_replyto" required />
         </div>
 
         <div class="form-group">
@@ -38,15 +38,15 @@
         </div>
 
         <!-- Redirect after submission -->
-        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html" />
-        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_redirect" value="https://pawclub.github.io/trinityspawclub/thankyou.html" />
+        <input type="text" name="_gotcha" style="display:none" />
 
         <button type="submit" class="btn-secondary">Send Message</button>
       </form>
     </div>
     <div class="back-home">
-  <a href="index.html" class="btn-secondary">← Back to Home</a>
-</div>
+      <a href="index.html" class="btn-secondary">← Back to Home</a>
+    </div>
   </section>
 </body>
 </html>
