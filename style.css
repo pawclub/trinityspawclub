@@ -548,9 +548,38 @@ button:focus {
   text-align: right;
   font-size: 0.95rem;
 }
-/* Override for About page “Book a Visit” button */
-.about-cta .btn-primary {
+/* ======================
+   About Page Styles
+   ====================== */
+
+/* Override cursive font */
+.about-cta .btn-primary,
+.about-book-btn {
   font-family: 'Poppins', sans-serif !important;
+}
+
+/* Styled About Page Button */
+.about-book-btn {
+  background-color: #607d5f; /* soft sage green */
+  color: #ffffff;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-book-btn:hover,
+.about-book-btn:focus {
+  background-color: #50694f;
+  transform: translateY(-2px);
+  outline: none;
 }
 .about-book-btn {
   font-family: 'Poppins', sans-serif !important;
