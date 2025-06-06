@@ -1,4 +1,6 @@
-/* Reset some basics */
+/* ======================
+   Global Reset & Base
+   ====================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,14 +14,22 @@ body {
   line-height: 1.6;
 }
 
-/* Container */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Navbar */
+/* ======================
+   Typography Utility Fix
+   ====================== */
+body {
+  font-family: 'Lato', sans-serif; /* Already declared above */
+}
+
+/* ======================
+   Navbar
+   ====================== */
 .navbar {
   background: #f3f5f2;
   padding: 1rem 0;
@@ -35,15 +45,13 @@ body {
   padding: 0 1rem;
 }
 
-/* Logo */
 .logo {
   font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
-  color: #607d5f; /* sage green */
+  color: #607d5f;
   user-select: none;
 }
 
-/* Navigation links */
 nav ul.nav-links {
   display: flex;
   list-style: none;
@@ -60,22 +68,30 @@ nav ul.nav-links li a {
 
 nav ul.nav-links li a:hover,
 nav ul.nav-links li a:focus {
-  color: #d98592; /* blush pink */
+  color: #d98592;
   outline: none;
 }
 
-/* Book a Visit button desktop */
+/* ======================
+   Buttons
+   ====================== */
+a.btn-primary.desktop-book-btn,
+a.btn-primary.mobile-book-btn,
+a.btn-secondary,
+.about-book-btn {
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
 a.btn-primary.desktop-book-btn {
   background-color: #d98592;
   color: white;
   padding: 0.5rem 1.25rem;
-  border-radius: 30px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
   font-size: 1rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  user-select: none;
 }
 
 a.btn-primary.desktop-book-btn:hover,
@@ -84,18 +100,11 @@ a.btn-primary.desktop-book-btn:focus {
   outline: none;
 }
 
-/* Buttons used inside page */
 a.btn-secondary {
-  display: inline-block;
-  background-color: #607d5f; /* sage green */
+  background-color: #607d5f;
   color: white;
   padding: 0.5rem 1.25rem;
-  border-radius: 30px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  user-select: none;
 }
 
 a.btn-secondary:hover,
@@ -104,7 +113,23 @@ a.btn-secondary:focus {
   outline: none;
 }
 
-/* Hamburger Menu Button */
+a.btn-primary.mobile-book-btn {
+  display: inline-block;
+  background-color: #d98592;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  text-align: center;
+}
+
+a.btn-primary.mobile-book-btn:hover,
+a.btn-primary.mobile-book-btn:focus {
+  background-color: #c36e7d;
+  outline: none;
+}
+
+/* ======================
+   Hamburger Menu
+   ====================== */
 #menu-toggle {
   display: none;
   flex-direction: column;
@@ -131,20 +156,338 @@ a.btn-secondary:focus {
   transition: all 0.3s ease;
 }
 
-/* Animate hamburger to X when active */
 #menu-toggle.active .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 #menu-toggle.active .bar:nth-child(2) {
   opacity: 0;
 }
-
 #menu-toggle.active .bar:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Responsive Navigation */
+/* ======================
+   Hero Section
+   ====================== */
+.hero {
+  background: linear-gradient(135deg, #d98592 0%, #607d5f 100%);
+  color: white;
+  padding: 6rem 1rem 4rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ======================
+   Sections
+   ====================== */
+.section {
+  padding: 4rem 1rem;
+}
+
+.section.light {
+  background-color: #f3f5f2;
+}
+
+/* ======================
+   Services Section
+   ====================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.service-box {
+  background-color: white;
+  border: 2px solid #607d5f;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #607d5f;
+  box-shadow: 0 2px 6px rgba(96, 125, 95, 0.15);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-box:hover,
+.service-box:focus {
+  background-color: #d98592;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.services-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-category {
+  background-color: #fff;
+  border: 1.5px solid #607d5f;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(96, 125, 95, 0.12);
+}
+
+.service-category h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: #607d5f;
+  margin-bottom: 0.25rem;
+}
+
+.service-category .subheading {
+  font-size: 0.95rem;
+  color: #888888;
+  margin-bottom: 1rem;
+}
+
+.service-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+}
+
+.service-list li:last-child {
+  border-bottom: none;
+}
+
+.service-list span.price {
+  font-weight: 600;
+  color: #d98592;
+}
+
+/* ======================
+   About Section
+   ====================== */
+.about-flex {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-flex img {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.about-book-btn {
+  font-family: 'Poppins', sans-serif !important;
+  background-color: #607d5f;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-book-btn:hover,
+.about-book-btn:focus {
+  background-color: #50694f;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* ======================
+   Testimonials
+   ====================== */
+.testimonials-section {
+  background-color: #fdfaf6;
+  padding: 4rem 1rem;
+  color: #333;
+}
+
+.testimonials-section h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #2f4f4f;
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #666;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.testimonial-author {
+  font-style: italic;
+  color: #888;
+  text-align: right;
+  font-size: 0.95rem;
+}
+
+/* ======================
+   Contact Form
+   ====================== */
+.contact-section {
+  background-color: #f3f5f2;
+  padding: 4rem 1rem;
+}
+
+.contact-section h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #607d5f;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #c3d1c0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d98592;
+  box-shadow: 0 0 0 3px rgba(217, 133, 146, 0.2);
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button[type="submit"] {
+  background-color: #607d5f;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #50694f;
+}
+
+/* ======================
+   Booking Section
+   ====================== */
+.booking-section {
+  padding: 4rem 2rem;
+}
+
+.booking-section h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.booking-section input,
+.booking-section select,
+.booking-section textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* ======================
+   Footer
+   ====================== */
+.footer {
+  background-color: #607d5f;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* ======================
+   Back to Home Button
+   ====================== */
+.back-home {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ======================
+   Responsive Navigation
+   ====================== */
 @media (max-width: 768px) {
   #menu-toggle {
     display: flex;
@@ -185,395 +528,16 @@ a.btn-secondary:focus {
     color: #3a3a3a;
   }
 
-  a.btn-primary.mobile-book-btn {
-    display: inline-block;
-    background-color: #d98592;
-    color: white;
-    padding: 0.6rem 1.25rem;
-    border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    text-align: center;
-    user-select: none;
-  }
-
-  a.btn-primary.mobile-book-btn:hover,
-  a.btn-primary.mobile-book-btn:focus {
-    background-color: #c36e7d;
-    outline: none;
-  }
-}
-
-/* Hero Section */
-.hero {
-  background: linear-gradient(135deg, #d98592 0%, #607d5f 100%);
-  color: white;
-  padding: 6rem 1rem 4rem;
-  text-align: center;
-}
-
-.hero h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Sections */
-.section {
-  padding: 4rem 1rem;
-}
-
-.section.light {
-  background-color: #f3f5f2;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Services Grid */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-
-.service-box {
-  background-color: white;
-  border: 2px solid #607d5f;
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  font-weight: 600;
-  color: #607d5f;
-  box-shadow: 0 2px 6px rgba(96, 125, 95, 0.15);
-  user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.service-box:hover,
-.service-box:focus {
-  background-color: #d98592;
-  color: white;
-  cursor: pointer;
-  outline: none;
-}
-
-/* About Section Flex */
-.about-flex {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.about-flex img {
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* Footer */
-.footer {
-  background-color: #607d5f;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  user-select: none;
-}
-
-/* Accessibility focus outline */
-a:focus,
-button:focus {
-  outline: 3px solid #d98592;
-  outline-offset: 2px;
-}
-
-/* --- New Service Section Bubble Styles --- */
-.services-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.service-category {
-  background-color: #ffffff;
-  border: 1.5px solid #607d5f;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 10px rgba(96, 125, 95, 0.12);
-}
-
-.service-category h4 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  color: #607d5f;
-  margin-bottom: 0.25rem;
-}
-
-.service-category .subheading {
-  font-size: 0.95rem;
-  color: #888888;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
-.service-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.service-list li {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 1rem;
-  color: #3a3a3a;
-}
-
-.service-list li:last-child {
-  border-bottom: none;
-}
-
-.service-list span.price {
-  font-weight: 600;
-  color: #d98592;
-}
-
-/* ======================
-   Contact Form Section
-   ====================== */
-.contact-section {
-  background-color: #f3f5f2;
-  padding: 4rem 1rem;
-}
-
-.contact-section h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #607d5f;
-  text-align: center;
-}
-
-/* Contact Form */
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.contact-form label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #3a3a3a;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid #c3d1c0;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-family: 'Lato', sans-serif;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background: #fff;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #d98592;
-  box-shadow: 0 0 0 3px rgba(217, 133, 146, 0.2);
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-form button[type="submit"] {
-  margin-top: 1rem;
-  display: inline-block;
-  background-color: #607d5f;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 30px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-form button[type="submit"]:hover {
-  background-color: #50694f;
-}
-
-@media (max-width: 600px) {
   .contact-form {
     padding: 1.5rem;
   }
 }
 
 /* ======================
-   Back to Home Button (on pages)
+   Accessibility
    ====================== */
-.back-home {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.back-home a.btn-secondary {
-  background-color: #d98592;
-  color: white;
-  padding: 0.6rem 1.5rem;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-}
-
-.back-home a.btn-secondary:hover,
-.back-home a.btn-secondary:focus {
-  background-color: #c36e7d;
-  outline: none;
-}
-
-/* ======================
-   Booking Section
-   ====================== */
-.booking-section {
-  padding: 4rem 2rem;
-}
-
-.booking-section h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.booking-section .form-group {
-  margin-bottom: 1.5rem;
-}
-
-.booking-section label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.booking-section input,
-.booking-section select,
-.booking-section textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: 'Lato', sans-serif;
-}
-
-/* ======================
-   Testimonials Section
-   ====================== */
-.testimonials-section {
-  background-color: #fdfaf6;
-  padding: 4rem 1rem;
-  color: #333;
-}
-
-.testimonials-section h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 0.5rem;
-  color: #2f4f4f;
-}
-
-.section-intro {
-  text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
-  color: #666;
-}
-
-.testimonial-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-}
-
-.testimonial-text {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  color: #444;
-}
-
-.testimonial-author {
-  font-style: italic;
-  color: #888;
-  text-align: right;
-  font-size: 0.95rem;
-}
-
-/* ======================
-   About Page Styles
-   ====================== */
-.about-cta .btn-primary,
-.about-book-btn {
-  font-family: 'Poppins', sans-serif !important;
-}
-
-.about-book-btn {
-  background-color: #607d5f;
-  color: #ffffff;
-  padding: 0.6rem 1.5rem;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-}
-
-.about-book-btn:hover,
-.about-book-btn:focus {
-  background-color: #50694f;
-  transform: translateY(-2px);
-  outline: none;
+a:focus,
+button:focus {
+  outline: 3px solid #d98592;
+  outline-offset: 2px;
 }
