@@ -5,6 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Purr Club | Booking</title>
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Booking Page Custom Styles -->
+  <style>
+  /* Container and Section */
+  .booking-section {
+    background: #fafafa; /* soft neutral background */
+    padding: 50px 20px;
+  }
+
+  .booking-section .container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    padding: 30px 40px;
+    font-family: 'Lato', sans-serif;
+  }
+
+  /* Heading */
+  .booking-section h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #4a7c59; /* sage green accent */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+
+  .booking-section p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+  }
+
+  /* Form Group */
+  .contact-form .form-group {
+    margin-bottom: 18px;
+  }
+
+  .contact-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus {
+    border-color: #4a7c59; /* sage green */
+    box-shadow: 0 0 5px rgba(74,124,89,0.3);
+    outline: none;
+  }
+
+  /* Submit Button */
+  .contact-form .btn-secondary {
+    display: inline-block;
+    width: 100%;
+    background: #4a7c59; /* sage green */
+    color: #fff;
+    border: none;
+    padding: 14px 0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .contact-form .btn-secondary:hover {
+    background: #3c6348; /* darker sage on hover */
+  }
+
+  /* Back Home Button */
+  .back-home {
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  .back-home a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 25px;
+    background: #eee;
+    color: #4a7c59;
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .back-home a:hover {
+    background: #4a7c59;
+    color: #fff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .booking-section .container {
+      padding: 25px 20px;
+    }
+  }
+  </style>
 </head>
 <body>
  <nav>
@@ -17,10 +129,11 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
-  <main>
+<main>
   <section class="section booking-section">
     <div class="container">
       <h3>Book a Service</h3>
+      <p>Fill out the form below to schedule your pet’s care.</p>
       <form action="https://formspree.io/f/mjkepyav" method="POST" class="contact-form">
         <div class="form-group">
           <label for="name">Your Name:</label>
@@ -76,6 +189,6 @@
       </div>
     </div>
   </section>
-  </main>
+</main>
 </body>
 </html>
