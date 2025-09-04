@@ -251,6 +251,9 @@ a.btn-primary.mobile-book-btn:focus {
   text-align: center;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
+.about-extra {
+  margin-top: 2rem; /* adds spacing above the section */
+}
 
 .about-book-btn:hover,
 .about-book-btn:focus {
