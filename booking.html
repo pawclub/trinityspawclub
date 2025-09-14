@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Purr Club | Booking</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Flatpickr CSS for multi-date picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   
   <!-- Booking Page Custom Styles -->
   <style>
@@ -185,10 +188,10 @@
           </select>
         </div>
 
-        <!-- Date Needed -->
+        <!-- Multi-Date Picker -->
         <div class="form-group">
-          <label for="date">Date Needed</label>
-          <input type="date" id="date" name="date" required />
+          <label for="dates">Dates Needed</label>
+          <input type="text" id="dates" name="dates" placeholder="Select multiple dates" required />
         </div>
 
         <!-- Time Needed -->
@@ -218,6 +221,15 @@
       </div>
     </div>
   </section>
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr("#dates", {
+      mode: "multiple",
+      dateFormat: "Y-m-d"
+    });
+  </script>
 
 </body>
 </html>
