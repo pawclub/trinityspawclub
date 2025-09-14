@@ -1,197 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Purr Club | Booking</title>
+
+  <!-- Your site stylesheet (optional) -->
   <link rel="stylesheet" href="style.css" />
-  
-  <!-- Booking Page Custom Styles -->
+
+  <!-- Flatpickr CSS (multi-date calendar) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
   <style>
-  /* Container and Section */
-  .booking-section {
-    background: #fafafa; /* soft neutral background */
-    padding: 50px 20px;
-  }
+    /* ---------- Booking page styles (kept small & self-contained) ---------- */
+    body { background:#f7f7f7; font-family: 'Lato', sans-serif; margin:0; padding:0; }
+    nav { background:#fff; padding:14px 20px; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+    nav ul { list-style:none; margin:0; padding:0; display:flex; gap:12px; }
+    nav a { text-decoration:none; color:#4a7c59; font-weight:600; }
 
-  .booking-section .container {
-    max-width: 700px;
-    margin: 0 auto;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    padding: 30px 40px;
-    font-family: 'Lato', sans-serif;
-  }
-
-  /* Heading */
-  .booking-section h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #4a7c59; /* sage green accent */
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 28px;
-  }
-
-  .booking-section p {
-    text-align: center;
-    color: #666;
-    margin-bottom: 25px;
-  }
-
-  /* Form Group */
-  .contact-form .form-group {
-    margin-bottom: 18px;
-  }
-
-  .contact-form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #333;
-  }
-
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 14px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .contact-form input:focus,
-  .contact-form select:focus,
-  .contact-form textarea:focus {
-    border-color: #4a7c59; /* sage green */
-    box-shadow: 0 0 5px rgba(74,124,89,0.3);
-    outline: none;
-  }
-
-  /* Submit Button */
-  .contact-form .btn-secondary {
-    display: inline-block;
-    width: 100%;
-    background: #4a7c59; /* sage green */
-    color: #fff;
-    border: none;
-    padding: 14px 0;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .contact-form .btn-secondary:hover {
-    background: #3c6348; /* darker sage on hover */
-  }
-
-  /* Back Home Button */
-  .back-home {
-    margin-top: 25px;
-    text-align: center;
-  }
-
-  .back-home a {
-    display: inline-block;
-    text-decoration: none;
-    padding: 12px 25px;
-    background: #eee;
-    color: #4a7c59;
-    border-radius: 10px;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-
-  .back-home a:hover {
-    background: #4a7c59;
-    color: #fff;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
+    .booking-section { background: #fafafa; padding: 50px 20px; }
     .booking-section .container {
-      padding: 25px 20px;
+      max-width: 800px; margin: 0 auto; background:#fff; border-radius:14px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08); padding:30px 36px;
     }
-  }
+    .booking-section h3 { font-family:'Poppins',sans-serif; color:#4a7c59; text-align:center; margin-bottom:6px; }
+    .booking-section p { text-align:center; color:#666; margin-bottom:20px; }
+
+    .contact-form .form-group { margin-bottom:16px; }
+    .contact-form label { display:block; margin-bottom:6px; color:#333; font-weight:600; }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form input[type="time"],
+    .contact-form select,
+    .contact-form textarea {
+      width:100%; padding:12px 14px; border:1px solid #e0e0e0; border-radius:10px; font-size:14px;
+      box-sizing:border-box;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus { outline:none; border-color:#4a7c59; box-shadow:0 0 6px rgba(74,124,89,0.18); }
+
+    .btn-secondary {
+      display:inline-block; width:100%; background:#4a7c59; color:#fff; border:none;
+      padding:14px 0; border-radius:10px; font-weight:700; cursor:pointer;
+    }
+    .btn-secondary:hover { background:#3c6348; }
+
+    .back-home { margin-top:20px; text-align:center; }
+    .back-home a { text-decoration:none; color:#4a7c59; background:#eee; padding:10px 18px; border-radius:8px; display:inline-block; }
+    @media (max-width:720px) {
+      .booking-section .container { padding:20px; }
+      nav ul { flex-wrap:wrap; }
+    }
   </style>
 </head>
 <body>
- <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="booking.html">Booking</a></li>
-  </ul>
- </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="booking.html">Booking</a></li>
+    </ul>
+  </nav>
 
- <section class="booking-section">
-   <div class="container">
-     <h3>Book Your Service</h3>
-     <p>Please fill out the form below to request a booking.</p>
+  <section class="booking-section">
+    <div class="container">
+      <h3>Book a Service</h3>
+      <p>Fill out the form below with the dates and details for your booking.</p>
 
-     <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form">
-       
-       <div class="form-group">
-         <label for="name">Full Name</label>
-         <input type="text" id="name" name="name" required />
-       </div>
+      <!-- ====== FORM: replace YOUR_FORM_ID with your actual Formspree form ID ====== -->
+      <form id="booking-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
 
-       <div class="form-group">
-         <label for="email">Email Address</label>
-         <input type="email" id="email" name="email" required />
-       </div>
+        <!-- Full name -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" required />
+        </div>
 
-       <div class="form-group">
-         <label for="phone">Phone Number</label>
-         <input type="tel" id="phone" name="phone" required />
-       </div>
+        <!-- Email (use _replyto so Formspree can set Reply-To) -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" name="_replyto" type="email" required />
+        </div>
 
-       <div class="form-group">
-         <label for="service">Select a Service</label>
-         <select id="service" name="service" required>
-           <option value="">-- Please choose an option --</option>
-           <option value="drop-in">Drop-In Visits</option>
-           <option value="daycare">Daycare</option>
-           <option value="overnight">Overnight Stay</option>
-           <option value="walking">Dog Walking</option>
-           <option value="consultation">Consultation</option>
-         </select>
-       </div>
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" />
+        </div>
 
-       <div class="form-group">
-         <label for="pet">Type of Pet</label>
-         <select id="pet" name="pet" required>
-           <option value="">-- Select pet type --</option>
-           <option value="dog">Dog</option>
-           <option value="cat">Cat</option>
-           <option value="other">Other</option>
-         </select>
-       </div>
+        <!-- Pet type -->
+        <div class="form-group">
+          <label for="pet-type">Type of Pet</label>
+          <select id="pet-type" name="pet_type" required>
+            <option value="">-- Please choose --</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
 
-       <div class="form-group">
-         <label for="dates">Select Date(s)</label>
-         <input type="date" id="dates" name="dates[]" multiple required />
-       </div>
+        <!-- Pet name -->
+        <div class="form-group">
+          <label for="pet-name">Pet's Name</label>
+          <input id="pet-name" name="pet_name" type="text" />
+        </div>
 
-       <div class="form-group">
-         <label for="details">Additional Details</label>
-         <textarea id="details" name="details" rows="4"></textarea>
-       </div>
+        <!-- Service -->
+        <div class="form-group">
+          <label for="service">Select a Service</label>
+          <select id="service" name="service" required>
+            <option value="">-- Please choose --</option>
+            <option value="drop-in">Drop-In Visits (in your home)</option>
+            <option value="daycare">Daycare</option>
+            <option value="overnight">Overnight Care</option>
+            <option value="walking">Dog Walking</option>
+            <option value="consultation">Consultation</option>
+          </select>
+        </div>
 
-       <!-- Redirect after submission -->
-       <input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
+        <!-- Multi-date picker (Flatpickr) - visible input used for selection -->
+        <div class="form-group">
+          <label for="dates">Dates Needed</label>
+          <!-- NOTE: visible input's name will be removed before submit so we send dates[] instead -->
+          <input id="dates" type="text" placeholder="Click to select multiple dates" required />
+        </div>
 
-       <button type="submit" class="btn-secondary">Submit Booking</button>
-     </form>
+        <!-- Time needed -->
+        <div class="form-group">
+          <label for="time">Preferred Time (or time window)</label>
+          <input id="time" name="time" type="text" placeholder="e.g. 9:00 AM - 11:00 AM" />
+        </div>
 
-     <div class="back-home">
-       <a href="index.html">← Back to Home</a>
-     </div>
-   </div>
- </section>
+        <!-- Address (Formspree recognizes 'address' as special field for integrations) -->
+        <div class="form-group">
+          <label for="address">Service Address</label>
+          <input id="address" name="address" type="text" />
+        </div>
+
+        <!-- Additional details -->
+        <div class="form-group">
+          <label for="message">Additional Details / Notes</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <!-- Formspree helpers -->
+        <!-- Optional subject shown in Formspree notification -->
+        <input type="hidden" name="_subject" value="New booking request — Purr Club">
+
+        <!-- Redirect: If you want visitors sent to your custom thank-you page after submit,
+             set _next to your page (note: controlling redirects might require you to set it in
+             the Formspree dashboard for some accounts). -->
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
+        <button type="submit" class="btn-secondary">Submit Booking</button>
+      </form>
+
+      <div class="back-home">
+        <a href="index.html">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    // initialize flatpickr (multi-date selection)
+    const fp = flatpickr("#dates", {
+      mode: "multiple",
+      dateFormat: "Y-m-d",   // year-month-day (easy to parse)
+      minDate: "today",
+      ariaDateFormat: "F j, Y"
+    });
+
+    // Before the form is submitted, convert the visible dates input into multiple hidden fields named dates[]
+    const form = document.getElementById('booking-form');
+    form.addEventListener('submit', function (e) {
+      // get the visible input value (flatpickr formats it as comma-separated list)
+      const datesInput = document.getElementById('dates');
+      const raw = datesInput.value || "";
+
+      // require at least one date (client-side)
+      if (!raw.trim()) {
+        e.preventDefault();
+        alert('Please select at least one date for the booking.');
+        datesInput.focus();
+        return;
+      }
+
+      // remove any previously added hidden date inputs to avoid duplicates (if user resubmits)
+      [...form.querySelectorAll('input[name="dates[]"]')].forEach(el => el.remove());
+
+      // remove name from visible input so it doesn't submit the comma string
+      datesInput.removeAttribute('name');
+
+      // split the comma-separated list into individual date strings, trim them
+      const datesArray = raw.split(',').map(s => s.trim()).filter(Boolean);
+
+      // append one hidden input per date: dates[] = 2025-09-20
+      datesArray.forEach(d => {
+        const hidden = document.createElement('input');
+        hidden.type = 'hidden';
+        hidden.name = 'dates[]';
+        hidden.value = d;
+        form.appendChild(hidden);
+      });
+
+      // allow normal form submit to proceed (POST to Formspree)
+    });
+  </script>
 </body>
 </html>
