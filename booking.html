@@ -119,9 +119,64 @@
   </style>
 </head>
 <body>
- <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="booking.html
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="booking.html">Booking</a></li>
+    </ul>
+  </nav>
+
+  <!-- Booking Section -->
+  <section class="booking-section">
+    <div class="container">
+      <h3>Book a Service</h3>
+      <p>Fill out the form below to request your booking.</p>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="service">Select a Service</label>
+          <select id="service" name="service" required>
+            <option value="">-- Please Choose --</option>
+            <option value="drop-in">Drop-In Visits</option>
+            <option value="daycare">Daycare</option>
+            <option value="overnight">Overnight Care</option>
+            <option value="walking">Walking</option>
+            <option value="consultation">Consultation</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Additional Details</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn-secondary">Submit Booking</button>
+      </form>
+
+      <div class="back-home">
+        <a href="index.html">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
