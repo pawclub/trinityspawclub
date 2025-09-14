@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
   <style>
-    /* ---------- Booking page styles (kept small & self-contained) ---------- */
     body { background:#f7f7f7; font-family: 'Lato', sans-serif; margin:0; padding:0; }
     nav { background:#fff; padding:14px 20px; box-shadow:0 1px 3px rgba(0,0,0,.06); }
     nav ul { list-style:none; margin:0; padding:0; display:flex; gap:12px; }
@@ -70,8 +69,8 @@
       <h3>Book a Service</h3>
       <p>Fill out the form below with the dates and details for your booking.</p>
 
-      <!-- ====== FORM: replace YOUR_FORM_ID with your actual Formspree form ID ====== -->
-      <form id="booking-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <!-- ====== FORM: Your Formspree endpoint included ====== -->
+      <form id="booking-form" class="contact-form" action="https://formspree.io/f/xzzgznwp" method="POST" novalidate>
 
         <!-- Full name -->
         <div class="form-group">
@@ -79,7 +78,7 @@
           <input id="name" name="name" type="text" required />
         </div>
 
-        <!-- Email (use _replyto so Formspree can set Reply-To) -->
+        <!-- Email -->
         <div class="form-group">
           <label for="email">Email Address</label>
           <input id="email" name="_replyto" type="email" required />
@@ -121,10 +120,9 @@
           </select>
         </div>
 
-        <!-- Multi-date picker (Flatpickr) - visible input used for selection -->
+        <!-- Multi-date picker -->
         <div class="form-group">
           <label for="dates">Dates Needed</label>
-          <!-- NOTE: visible input's name will be removed before submit so we send dates[] instead -->
           <input id="dates" type="text" placeholder="Click to select multiple dates" required />
         </div>
 
@@ -134,7 +132,7 @@
           <input id="time" name="time" type="text" placeholder="e.g. 9:00 AM - 11:00 AM" />
         </div>
 
-        <!-- Address (Formspree recognizes 'address' as special field for integrations) -->
+        <!-- Address -->
         <div class="form-group">
           <label for="address">Service Address</label>
           <input id="address" name="address" type="text" />
@@ -147,12 +145,7 @@
         </div>
 
         <!-- Formspree helpers -->
-        <!-- Optional subject shown in Formspree notification -->
         <input type="hidden" name="_subject" value="New booking request — Purr Club">
-
-        <!-- Redirect: If you want visitors sent to your custom thank-you page after submit,
-             set _next to your page (note: controlling redirects might require you to set it in
-             the Formspree dashboard for some accounts). -->
         <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
 
         <button type="submit" class="btn-secondary">Submit Booking</button>
@@ -167,22 +160,18 @@
   <!-- Flatpickr JS -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
-    // initialize flatpickr (multi-date selection)
     const fp = flatpickr("#dates", {
       mode: "multiple",
-      dateFormat: "Y-m-d",   // year-month-day (easy to parse)
+      dateFormat: "Y-m-d",
       minDate: "today",
       ariaDateFormat: "F j, Y"
     });
 
-    // Before the form is submitted, convert the visible dates input into multiple hidden fields named dates[]
     const form = document.getElementById('booking-form');
     form.addEventListener('submit', function (e) {
-      // get the visible input value (flatpickr formats it as comma-separated list)
       const datesInput = document.getElementById('dates');
       const raw = datesInput.value || "";
 
-      // require at least one date (client-side)
       if (!raw.trim()) {
         e.preventDefault();
         alert('Please select at least one date for the booking.');
@@ -190,16 +179,9 @@
         return;
       }
 
-      // remove any previously added hidden date inputs to avoid duplicates (if user resubmits)
       [...form.querySelectorAll('input[name="dates[]"]')].forEach(el => el.remove());
-
-      // remove name from visible input so it doesn't submit the comma string
       datesInput.removeAttribute('name');
-
-      // split the comma-separated list into individual date strings, trim them
       const datesArray = raw.split(',').map(s => s.trim()).filter(Boolean);
-
-      // append one hidden input per date: dates[] = 2025-09-20
       datesArray.forEach(d => {
         const hidden = document.createElement('input');
         hidden.type = 'hidden';
@@ -207,8 +189,6 @@
         hidden.value = d;
         form.appendChild(hidden);
       });
-
-      // allow normal form submit to proceed (POST to Formspree)
     });
   </script>
 </body>
