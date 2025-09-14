@@ -137,21 +137,42 @@
       <p>Fill out the form below to request your booking.</p>
 
       <form class="contact-form">
+        <!-- Full Name -->
         <div class="form-group">
           <label for="name">Full Name</label>
           <input type="text" id="name" name="name" required />
         </div>
 
+        <!-- Email -->
         <div class="form-group">
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" required />
         </div>
 
+        <!-- Phone -->
         <div class="form-group">
           <label for="phone">Phone Number</label>
           <input type="tel" id="phone" name="phone" required />
         </div>
 
+        <!-- Type of Pet -->
+        <div class="form-group">
+          <label for="pet-type">Type of Pet</label>
+          <select id="pet-type" name="pet-type" required>
+            <option value="">-- Please Choose --</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- Pet's Name -->
+        <div class="form-group">
+          <label for="pet-name">Pet's Name</label>
+          <input type="text" id="pet-name" name="pet-name" required />
+        </div>
+
+        <!-- Service Selection -->
         <div class="form-group">
           <label for="service">Select a Service</label>
           <select id="service" name="service" required>
@@ -164,11 +185,31 @@
           </select>
         </div>
 
+        <!-- Date Needed -->
+        <div class="form-group">
+          <label for="date">Date Needed</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <!-- Time Needed -->
+        <div class="form-group">
+          <label for="time">Time Needed</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" required />
+        </div>
+
+        <!-- Additional Details -->
         <div class="form-group">
           <label for="message">Additional Details</label>
           <textarea id="message" name="message" rows="4"></textarea>
         </div>
 
+        <!-- Submit Button -->
         <button type="submit" class="btn-secondary">Submit Booking</button>
       </form>
 
