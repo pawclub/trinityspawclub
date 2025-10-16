@@ -45,11 +45,11 @@ h1, h2, h3 {
    HAMBURGER MENU
 ========================== */
 #menu-toggle {
-  display: none; /* hidden on desktop, shown on mobile */
+  display: none; /* hidden on desktop */
   flex-direction: column;
   justify-content: space-between;
-  width: 25px;
-  height: 20px;
+  width: 35px;      /* bigger */
+  height: 28px;     /* taller */
   background: none;
   border: none;
   cursor: pointer;
@@ -57,7 +57,7 @@ h1, h2, h3 {
 }
 
 #menu-toggle .bar {
-  height: 3px;
+  height: 4px;      /* thicker bars */
   width: 100%;
   background-color: #607d5f; /* sage green bars */
   border-radius: 2px;
@@ -65,13 +65,13 @@ h1, h2, h3 {
 }
 
 #menu-toggle.active .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 #menu-toggle.active .bar:nth-child(2) {
   opacity: 0;
 }
 #menu-toggle.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Navigation Menu */
@@ -90,40 +90,6 @@ h1, h2, h3 {
   color: #333;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  #menu-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none; /* hide menu on mobile by default */
-    flex-direction: column;
-    width: 100%;
-    background-color: #ffffff;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-radius: 0 0 12px 12px;
-    gap: 1rem;
-  }
-
-  .nav-links.active {
-    display: flex; /* show menu only when active */
-  }
-
-  .desktop-book-btn {
-    display: none;
-  }
-
-  .mobile-book-btn {
-    display: block;
-    margin-top: 1rem;
-  }
 }
 
 /* ==========================
@@ -232,3 +198,42 @@ h1, h2, h3 {
   font-family: 'Lato', sans-serif;
   color: #333;
 }
+
+/* ==========================
+   MOBILE ADJUSTMENTS
+========================== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between; /* keep hamburger on right */
+    align-items: center;
+  }
+
+  #menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none !important; /* force hide on mobile */
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 0; /* aligned to right */
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 0 0 12px 12px;
+    gap: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .desktop-book-btn {
+    display: none;
+  }
+
+  .mobile-book-btn {
+    display:
