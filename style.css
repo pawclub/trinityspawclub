@@ -7,7 +7,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-} 
+}
 
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
@@ -22,13 +22,17 @@ h1, h2, h3 {
   background-color: #ffffff;
   border-bottom: 1px solid #e4e4e4;
   padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-container {
-  position: relative; /* for mobile menu alignment */
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative; /* needed for absolute menu positioning */
 }
 
 .logo {
@@ -159,8 +163,10 @@ h1, h2, h3 {
   border: none;
   cursor: pointer;
   z-index: 1100;
-  position: absolute; /* position hamburger */
-  right: 0;           /* stick to right */
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
 }
 
 #menu-toggle .bar {
