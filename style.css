@@ -534,3 +534,29 @@ button:focus {
   outline: 3px solid #d98592;
   outline-offset: 2px;
 }
+/* === Service Area Styling === */
+.service-area {
+  text-align: center;
+  margin: 2rem auto 3rem auto;
+  background: #f8f8f8;
+  border-left: 4px solid #a2c4b9; /* soft sage green accent */
+  border-right: 4px solid #a2c4b9;
+  border-radius: 8px;
+  max-width: 700px;
+  padding: 1rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.service-area p {
+  font-size: 1.1rem;
+  color: #444;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.service-area strong {
+  color: #6a9b8d; /* matches your neutral-sage aesthetic */
+  font-weight: 600;
+}
