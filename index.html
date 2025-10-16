@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">   
+<html lang="en">  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,8 +35,6 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="booking.html" class="btn-primary mobile-book-btn">Book a Visit</a></li>
       </ul>
-
-      <a href="booking.html" class="btn-primary desktop-book-btn">Book a Visit</a>
     </div>
   </header>
 
@@ -88,11 +86,11 @@
     const navMenu = document.getElementById('nav-menu');
 
     menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active'); // show/hide menu
       menuToggle.classList.toggle('active'); // animate bars
-      navMenu.classList.toggle('active');    // show/hide menu
     });
 
-    // Close menu when clicking a link (mobile-friendly)
+    // Close menu when clicking a link (optional)
     document.querySelectorAll('.nav-links li a').forEach(link => {
       link.addEventListener('click', () => {
         if(navMenu.classList.contains('active')) {
