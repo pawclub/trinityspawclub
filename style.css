@@ -1,536 +1,100 @@
-/* ======================
-   Global Reset & Base
-   ====================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f9f9f7;
-  color: #3a3a3a;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* ======================
-   Navbar
-   ====================== */
-.navbar {
-  background: #f3f5f2;
-  padding: 1rem 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.logo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  color: #607d5f;
-  user-select: none;
-}
-
-nav ul.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-nav ul.nav-links li a {
-  color: #3a3a3a;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-nav ul.nav-links li a:hover,
-nav ul.nav-links li a:focus {
-  color: #d98592;
-  outline: none;
-}
-
-/* ======================
-   Buttons
-   ====================== */
-a.btn-primary.desktop-book-btn,
-a.btn-primary.mobile-book-btn,
-a.btn-secondary,
-.about-book-btn {
-  border-radius: 30px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  text-decoration: none;
-  user-select: none;
-  transition: background-color 0.3s ease;
-}
-
-a.btn-primary.desktop-book-btn {
-  background-color: #d98592;
-  color: white;
-  padding: 0.5rem 1.25rem;
-  font-size: 1rem;
-}
-
-a.btn-primary.desktop-book-btn:hover,
-a.btn-primary.desktop-book-btn:focus {
-  background-color: #c36e7d;
-  outline: none;
-}
-
-a.btn-secondary {
-  background-color: #607d5f;
-  color: white;
-  padding: 0.5rem 1.25rem;
-  font-weight: 600;
-}
-
-a.btn-secondary:hover,
-a.btn-secondary:focus {
-  background-color: #50694f;
-  outline: none;
-}
-
-a.btn-primary.mobile-book-btn {
-  display: inline-block;
-  background-color: #d98592;
-  color: white;
-  padding: 0.6rem 1.25rem;
-  text-align: center;
-}
-
-a.btn-primary.mobile-book-btn:hover,
-a.btn-primary.mobile-book-btn:focus {
-  background-color: #c36e7d;
-  outline: none;
-}
-
-/* ======================
-   Hamburger Menu
-   ====================== */
-#menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 28px;
-  height: 22px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 10;
-}
-
-#menu-toggle:focus {
-  outline: 2px solid #d98592;
-  outline-offset: 2px;
-}
-
-#menu-toggle .bar {
-  width: 28px;
-  height: 3px;
-  background-color: #607d5f;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-#menu-toggle.active .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-#menu-toggle.active .bar:nth-child(2) {
-  opacity: 0;
-}
-#menu-toggle.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* ======================
-   Hero Section
-   ====================== */
-.hero {
-  background: linear-gradient(135deg, #d98592 0%, #607d5f 100%);
-  color: white;
-  padding: 6rem 1rem 4rem;
-  text-align: center;
-}
-.hero h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3.1rem;     /* Try adjusting this size */
-  font-weight: 400;      /* Medium weight – less bold */
-  color: #4f6a4e;        /* Sage green or other lighter shade */
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-
-}
-
-.hero p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-
-/* ======================
-   Sections
-   ====================== */
-.section {
-  padding: 4rem 1rem;
-}
-
-.section.light {
-  background-color: #f3f5f2;
-}
-
-/* ======================
-   Services Section
-   ====================== */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-
-.service-box {
-  background-color: white;
-  border: 2px solid #607d5f;
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  font-weight: 600;
-  color: #607d5f;
-  font-family: 'Montserrat', sans-serif;
-  box-shadow: 0 2px 6px rgba(96, 125, 95, 0.15);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.service-box:hover,
-.service-box:focus {
-  background-color: #d98592;
-  color: white;
-  cursor: pointer;
-  outline: none;
-}
-
-/* ======================
-   About Section
-   ====================== */
-/* === ABOUT PAGE STYLING === */
-.about-section {
-  padding: 4rem 2rem;
-  background-color: #f9f9f6; /* soft neutral background */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.about-section h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  color: #333;
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.section-intro {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #777;
-  margin-bottom: 2.5rem;
-}
-
-.about-flex {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.about-flex img {
-  border-radius: 50%;
-  max-width: 220px;
-  border: 5px solid #e6e6e6; /* soft border around photo */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  flex-shrink: 0;
-}
-
-.about-text {
-  max-width: 600px;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #444;
-}
-
-.about-extra {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.about-extra h4 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #607d5f; /* sage green accent */
-}
-
-.about-extra ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.about-extra li {
-  margin-bottom: 0.6rem;
-  font-size: 1rem;
-  color: #555;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.about-cta {
-  text-align: center;
-  margin-top: 2.5rem;
-}
-
-.about-cta a {
-  margin: 0 0.6rem;
-}
-
-.back-home {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.about-book-btn {
-  background-color: #607d5f;
-  color: #fff;
-  padding: 0.6rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  display: inline-block;
-  text-align: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-  border-radius: 6px;
-  transition: all 0.2s ease-in-out;
-}
-
-.about-book-btn:hover,
-.about-book-btn:focus {
-  background-color: #50694f;
-  transform: translateY(-2px);
-  outline: none;
-}
-
-/* ======================
-   Testimonials
-   ====================== */
-.testimonials-section {
-  background-color: #fdfaf6;
-  padding: 4rem 1rem;
-  color: #333;
-}
-
-.testimonials-section h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 0.5rem;
-  color: #2f4f4f;
-}
-
-.section-intro {
-  text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
-  color: #666;
-}
-
-.testimonial-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-}
-
-.testimonial-text {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  color: #444;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.testimonial-author {
-  font-style: italic;
-  color: #888;
-  text-align: right;
-  font-size: 0.95rem;
-}
-
-/* ======================
-   Contact Form
-   ====================== */
-.contact-section {
-  background-color: #f3f5f2;
-  padding: 4rem 1rem;
-}
-
-.contact-section h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #607d5f;
-  text-align: center;
-}
-
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.contact-form label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid #c3d1c0;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-family: 'Montserrat', sans-serif;
-  background: #fff;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #d98592;
-  box-shadow: 0 0 0 3px rgba(217, 133, 146, 0.2);
-  outline: none;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-form button[type="submit"] {
-  background-color: #607d5f;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 30px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.contact-form button[type="submit"]:hover {
-  background-color: #50694f;
-}
-
-/* ======================
-   Footer
-   ====================== */
-.footer {
-  background-color: #607d5f;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  user-select: none;
-}
-
-/* ======================
-   Responsive Navigation
-   ====================== */
-@media (max-width: 768px) {
-  #menu-toggle {
-    display: flex;
-  }
-
-  a.btn-primary.desktop-book-btn {
-    display: none;
-  }
-
-  nav ul.nav-links {
-    position: fixed;
-    top: 64px;
-    right: 0;
-    width: 220px;
-    height: calc(100% - 64px);
-    background-color: #f3f5f2;
-    flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 9;
-    overflow-y: auto;
-  }
-
-  nav ul.nav-links.active {
-    transform: translateX(0);
-  }
-
-  nav ul.nav-links li {
-    margin-bottom: 1rem;
-  }
-
-  nav ul.nav-links li a {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #3a3a3a;
-  }
-
-  .contact-form {
-    padding: 1.5rem;
-  }
-}
-
-/* ======================
-   Accessibility
-   ====================== */
-a:focus,
-button:focus {
-  outline: 3px solid #d98592;
-  outline-offset: 2px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trinity's Paw Club</title>
+
+  <!-- Load Google Fonts: Montserrat (headings) & Poppins (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap" rel="stylesheet">
+  <!-- Load Your CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Trinity’s Paw Club</div>
+
+      <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="nav-menu" role="menu" aria-hidden="true">
+          <li role="none"><a role="menuitem" href="#hero">Home</a></li>
+          <li role="none"><a role="menuitem" href="services.html">Services</a></li>
+          <li role="none"><a role="menuitem" href="about.html">About</a></li>
+          <li role="none"><a role="menuitem" href="booking.html">Booking</a></li>
+          <li role="none"><a role="menuitem" href="testimonials.html">Testimonials</a></li>
+          <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+          <li role="none"><a role="menuitem" href="booking.html" class="btn-primary mobile-book-btn">Book a Visit</a></li>
+        </ul>
+      </nav>
+
+      <a href="booking.html" class="btn-primary desktop-book-btn">Book a Visit</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <h2>Welcome to Trinity’s Paw Club</h2>
+      <p class="hero-subtext">This Isn’t Just Pet Care — It’s Club Life: Pet Edition.</p>
+      <a href="services.html" class="btn-secondary">See Services</a>
+    </div>
+  </section>
+  
+<p class="service-area">Proudly serving Salem, Keizer, and nearby areas in Oregon.</p>
+            
+  <!-- Services Section -->
+  
+  <section id="services" class="section services-preview">
+    <div class="container">
+      <h2>What I Offer</h2>
+      <div class="services-grid">
+        <div class="service-box">Overnight Pet Sitting</div>
+        <div class="service-box">Drop-ins</div>
+        <div class="service-box">Daycare</div>
+        <div class="service-box">Dog Walking</div>
+        <div class="service-box">Special Requests</div>
+      </div>
+    </div>
+  </section>
+  <!-- ⭐ New Consultation Section -->
+<section id="consultation" class="section consultation">
+  <div class="container" style="text-align:center; padding:2rem; background:#f9f9f9; border-radius:8px; margin-top:2rem;">
+    <h2>Free 30-Minute Consultation</h2>
+    <p>Not sure which service is best for your pet? I offer a free consultation to get to know your pet, answer questions, and help you feel confident about choosing Trinity’s Paw Club.</p>
+    <a href="booking.html" class="btn-primary">Schedule Your Free Virtual Consultation</a>
+  </div>
+</section>
+<!-- End of New Section -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Trinity’s Paw Club | Serving pets with love</p>
+    </div>
+  </footer>
+
+  <!-- JS: Mobile Menu Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navMenu.classList.toggle('active');
+      navMenu.setAttribute('aria-hidden', expanded);
+      menuToggle.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
