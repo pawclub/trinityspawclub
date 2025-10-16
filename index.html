@@ -1,100 +1,233 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trinity's Paw Club</title>
+/* ==========================
+   GLOBAL STYLES
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Load Google Fonts: Montserrat (headings) & Poppins (body) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap" rel="stylesheet">
-  <!-- Load Your CSS Stylesheets -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="services.css" />
-</head>
-<body>
+body {
+  font-family: 'Lato', sans-serif; /* clean body font */
+  background-color: #fdf9f5; /* soft cream background */
+  color: #333;
+  line-height: 1.6;
+}
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">Trinity’s Paw Club</div>
+/* ==========================
+   NAVBAR
+========================== */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-      <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
 
-      <nav>
-        <ul class="nav-links" id="nav-menu" role="menu" aria-hidden="true">
-          <li role="none"><a role="menuitem" href="#hero">Home</a></li>
-          <li role="none"><a role="menuitem" href="services.html">Services</a></li>
-          <li role="none"><a role="menuitem" href="about.html">About</a></li>
-          <li role="none"><a role="menuitem" href="booking.html">Booking</a></li>
-          <li role="none"><a role="menuitem" href="testimonials.html">Testimonials</a></li>
-          <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
-          <li role="none"><a role="menuitem" href="booking.html" class="btn-primary mobile-book-btn">Book a Visit</a></li>
-        </ul>
-      </nav>
+.logo {
+  font-family: 'Baloo 2', 'Fredoka', 'Poppins', sans-serif; /* chunky rounded font */
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #66d3a2, #f8c8c8); /* sage green to blush pink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-      <a href="booking.html" class="btn-primary desktop-book-btn">Book a Visit</a>
-    </div>
-  </header>
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+}
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="container">
-      <h2>Welcome to Trinity’s Paw Club</h2>
-      <p class="hero-subtext">This Isn’t Just Pet Care — It’s Club Life: Pet Edition.</p>
-      <a href="services.html" class="btn-secondary">See Services</a>
-    </div>
-  </section>
-  
-<p class="service-area">Proudly serving Salem, Keizer, and nearby areas in Oregon.</p>
-            
-  <!-- Services Section -->
-  
-  <section id="services" class="section services-preview">
-    <div class="container">
-      <h2>What I Offer</h2>
-      <div class="services-grid">
-        <div class="service-box">Overnight Pet Sitting</div>
-        <div class="service-box">Drop-ins</div>
-        <div class="service-box">Daycare</div>
-        <div class="service-box">Dog Walking</div>
-        <div class="service-box">Special Requests</div>
-      </div>
-    </div>
-  </section>
-  <!-- ⭐ New Consultation Section -->
-<section id="consultation" class="section consultation">
-  <div class="container" style="text-align:center; padding:2rem; background:#f9f9f9; border-radius:8px; margin-top:2rem;">
-    <h2>Free 30-Minute Consultation</h2>
-    <p>Not sure which service is best for your pet? I offer a free consultation to get to know your pet, answer questions, and help you feel confident about choosing Trinity’s Paw Club.</p>
-    <a href="booking.html" class="btn-primary">Schedule Your Free Virtual Consultation</a>
-  </div>
-</section>
-<!-- End of New Section -->
+.nav-links a {
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Trinity’s Paw Club | Serving pets with love</p>
-    </div>
-  </footer>
+.nav-links a:hover {
+  color: #66d3a2; /* sage green accent */
+}
 
-  <!-- JS: Mobile Menu Toggle -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
+/* Hamburger menu */
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
 
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      navMenu.classList.toggle('active');
-      navMenu.setAttribute('aria-hidden', expanded);
-      menuToggle.classList.toggle('active');
-    });
-  </script>
+#menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
 
-</body>
-</html>
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  #menu-toggle {
+    display: flex;
+  }
+
+  .desktop-book-btn {
+    display: none;
+  }
+
+  .mobile-book-btn {
+    display: block;
+    margin-top: 1rem;
+  }
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+.btn-primary {
+  background-color: #66d3a2; /* sage green */
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4bb37c; /* slightly darker sage */
+}
+
+.btn-secondary {
+  background-color: #f8c8c8; /* blush pink */
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f49797; /* darker blush on hover */
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+.hero {
+  background: linear-gradient(135deg, #fdf9f5, #f9f5f0, #e8f2eb); /* warm neutral gradient */
+  text-align: center;
+  padding: 6rem 2rem 4rem 2rem;
+  border-radius: 12px;
+  margin: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.hero h2 {
+  font-family: 'Baloo 2', 'Fredoka', 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #66d3a2, #f8c8c8); /* sage to blush gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* ==========================
+   SERVICE AREA
+========================== */
+.service-area {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1rem;
+  color: #888;
+  font-weight: 500;
+}
+
+/* ==========================
+   SERVICES SECTION
+========================== */
+.section {
+  padding: 4rem 2rem;
+}
+
+.services-preview h2 {
+  text-align: center;
+  font-family: 'Baloo 2', 'Fredoka', 'Poppins', sans-serif;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: #333;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.service-box {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-top: 4px solid #66d3a2; /* sage green accent */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  border-top-color: #f8c8c8; /* blush pink on hover */
+}
+
+/* ==========================
+   FOOTER
+========================== */
+.footer {
+  background-color: #f8f8f8;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 3rem;
+}
