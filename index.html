@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">   
+<html lang="en">  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@
         <span class="bar"></span>
       </button>
 
-      <!-- Navigation (hidden by default) -->
+      <!-- Navigation -->
       <ul class="nav-links" id="nav-menu">
         <li><a href="#hero">Home</a></li>
         <li><a href="services.html">Services</a></li>
@@ -35,6 +35,8 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="booking.html" class="btn-primary mobile-book-btn">Book a Visit</a></li>
       </ul>
+
+      <a href="booking.html" class="btn-primary desktop-book-btn">Book a Visit</a>
     </div>
   </header>
 
@@ -86,15 +88,17 @@
     const navMenu = document.getElementById('nav-menu');
 
     menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active'); // show/hide menu
       menuToggle.classList.toggle('active'); // animate bars
+      navMenu.classList.toggle('active');    // show/hide menu
     });
 
-    // Close menu when clicking a link
+    // Close menu when clicking a link (mobile-friendly)
     document.querySelectorAll('.nav-links li a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
+        if(navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+        }
       });
     });
   </script>
