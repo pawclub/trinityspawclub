@@ -25,7 +25,7 @@
         <span class="bar"></span>
       </button>
 
-      <!-- Navigation -->
+      <!-- Navigation (hidden by default) -->
       <ul class="nav-links" id="nav-menu">
         <li><a href="#hero">Home</a></li>
         <li><a href="services.html">Services</a></li>
@@ -90,13 +90,11 @@
       menuToggle.classList.toggle('active'); // animate bars
     });
 
-    // Close menu when clicking a link (optional)
+    // Close menu when clicking a link
     document.querySelectorAll('.nav-links li a').forEach(link => {
       link.addEventListener('click', () => {
-        if(navMenu.classList.contains('active')) {
-          navMenu.classList.remove('active');
-          menuToggle.classList.remove('active');
-        }
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
       });
     });
   </script>
