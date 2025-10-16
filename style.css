@@ -139,9 +139,10 @@ h1, h2, h3 {
   align-items: center;
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #66d3a2, #f7a1b5); /* sage → blush gradient */
+  background: linear-gradient(135deg, #52b78a, #e88fae); /* darker sage → blush gradient */
   border-radius: 12px;
   margin: 2rem auto;
+}
 }
 
 .hero h2,
