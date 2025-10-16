@@ -76,13 +76,13 @@ h1, h2, h3 {
    NAV LINKS
 ========================== */
 .nav-links {
-  display: none; /* hidden by default */
+  display: none; /* hidden by default on all screen sizes */
   flex-direction: column;
   background-color: #ffffff;
   position: absolute;
-  top: 60px; /* below hamburger */
+  top: 60px; /* just below hamburger */
   right: 10px;
-  width: 200px;
+  width: 220px;
   padding: 1rem;
   border: 1px solid #e4e4e4;
   border-radius: 6px;
