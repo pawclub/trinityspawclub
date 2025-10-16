@@ -138,3 +138,64 @@ h1, h2, h3 {
   font-family: 'Lato', sans-serif;
   color: #333;
 }
+/* ==========================
+   HAMBURGER MENU
+========================== */
+#menu-toggle {
+  display: none; /* hide on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+#menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #607d5f; /* sage green bars */
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+#menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: flex; /* show hamburger */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    flex-direction: column;
+    width: 220px;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    padding: 1rem;
+    display: none;
+    z-index: 1050;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .desktop-book-btn {
+    display: none; /* hide desktop button on mobile */
+  }
+}
