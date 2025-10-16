@@ -18,25 +18,23 @@
     <div class="nav-container">
       <div class="logo">Trinity’s Paw Club</div>
 
-      <!-- Hamburger Menu Button -->
-      <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+      <!-- Hamburger -->
+      <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
 
-      <!-- Nav Links -->
-      <nav>
-        <ul class="nav-links" id="nav-menu">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="booking.html">Booking</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="booking.html" class="btn-primary mobile-book-btn">Book a Visit</a></li>
-        </ul>
-      </nav>
+      <!-- Navigation -->
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html" class="btn-primary mobile-book-btn">Book a Visit</a></li>
+      </ul>
 
       <a href="booking.html" class="btn-primary desktop-book-btn">Book a Visit</a>
     </div>
@@ -84,16 +82,18 @@
     </div>
   </footer>
 
-  <!-- JS: Mobile Menu Toggle -->
+  <!-- JS: Hamburger Menu Toggle -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
 
     menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      navMenu.classList.toggle('active');
       menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+
+      // Update aria-expanded attribute
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
     });
   </script>
 
