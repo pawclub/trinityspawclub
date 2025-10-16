@@ -139,7 +139,7 @@ h1, h2, h3 {
   align-items: center;
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #3e8b6b, #c97195); /* darker sage → darker blush */
+  background: linear-gradient(135deg, #3a7b5f, #bf6f8c); /* slightly darker sage → blush */
   border-radius: 12px;
   margin: 2rem auto;
 }
