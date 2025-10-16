@@ -152,3 +152,9 @@ h1, h2, h3 {
   font-family: 'Lato', sans-serif;
   color: #333;
 }
+
+/* FORCE HERO TITLE COLOR */
+.hero h2,
+.hero-title {
+  color: #1d7764 !important; /* solid sage green */
+}
