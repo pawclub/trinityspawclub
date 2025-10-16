@@ -2,87 +2,120 @@
    CONTACT PAGE STYLES
 ========================== */
 
+/* Body */
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #f9f9f7;
+  background-color: #f9f9f7; /* soft neutral */
   color: #333;
   margin: 0;
   padding: 0;
 }
 
-h1, h2 {
+/* Headings */
+h3 {
   font-family: 'Poppins', sans-serif;
-  color: #1d7764;
+  color: #1d7764; /* sage green */
   text-align: center;
   margin-top: 2rem;
-}
-
-/* Contact Section */
-.contact-container {
-  max-width: 700px;
-  margin: 3rem auto;
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 2rem 3rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.contact-container h2 {
-  color: #1d7764;
-  text-align: center;
   margin-bottom: 1rem;
 }
 
-.contact-container p {
+/* Contact Section */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* Paragraphs */
+.contact-section p {
   text-align: center;
   color: #555;
   margin-bottom: 2rem;
 }
 
-form {
+/* Form */
+.contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
-label {
+.form-group label {
   font-weight: 600;
   color: #333;
+  margin-bottom: 0.3rem;
+  display: block;
 }
 
-input, textarea {
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-input:focus, textarea:focus {
-  border-color: #1d7764;
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #f7b7b5; /* blush pink focus */
   outline: none;
+  box-shadow: 0 0 5px rgba(247, 183, 181, 0.4);
 }
 
-button {
-  background-color: #1d7764;
+/* Submit Button */
+button.btn-secondary {
+  background-color: #f7b7b5; /* blush pink */
   color: white;
   border: none;
   padding: 0.9rem 0;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #155a4d;
+button.btn-secondary:hover {
+  background-color: #e49fa0; /* slightly darker blush on hover */
+}
+
+/* Back Home Button */
+.back-home {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.back-home a.btn-secondary {
+  display: inline-block;
+  background-color: #1d7764; /* sage green */
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-home a.btn-secondary:hover {
+  background-color: #155a4d; /* darker sage */
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  .contact-container {
-    padding: 1.5rem;
+  .container {
+    padding: 2rem 1.5rem;
   }
 }
