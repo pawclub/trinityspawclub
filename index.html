@@ -90,10 +90,7 @@
     menuToggle.addEventListener('click', () => {
       menuToggle.classList.toggle('active');
       navMenu.classList.toggle('active');
-
-      // Update aria-expanded attribute
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !expanded);
+      menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
     });
   </script>
 
