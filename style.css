@@ -125,7 +125,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #4bb37c;
+  background-color: #4bb37c; /* slightly darker sage */
 }
 
 .btn-secondary {
@@ -138,14 +138,14 @@ body {
 }
 
 .btn-secondary:hover {
-  background-color: #f49797;
+  background-color: #f49797; /* darker blush on hover */
 }
 
 /* ==========================
    HERO SECTION
 ========================== */
 .hero {
-  background: linear-gradient(135deg, #fdf9f5, #f0f0f0, #e0f7f1); /* warm neutral gradient */
+  background: linear-gradient(135deg, #fdf9f5, #f9f5f0, #e8f2eb); /* warm neutral gradient */
   text-align: center;
   padding: 6rem 2rem 4rem 2rem;
   border-radius: 12px;
@@ -154,10 +154,10 @@ body {
 }
 
 .hero h2 {
-  font-family: 'Baloo 2', 'Fredoka', 'Poppins', sans-serif; /* chunky rounded */
+  font-family: 'Baloo 2', 'Fredoka', 'Poppins', sans-serif;
   font-size: 3rem;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #66d3a2, #f8c8c8); /* sage green to blush pink */
+  background: linear-gradient(90deg, #66d3a2, #f8c8c8); /* sage to blush gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -210,7 +210,7 @@ body {
   font-weight: 600;
   color: #333;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  border-top: 4px solid #66d3a2; /* sage green accent on top */
+  border-top: 4px solid #66d3a2; /* sage green accent */
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
 }
 
