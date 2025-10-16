@@ -5,7 +5,7 @@ body {
   font-family: 'Lato', sans-serif;
   background-color: #f9f9f7;
   color: #333;
-  margin: 0; 
+  margin: 0;
   padding: 0;
 }
 
@@ -22,7 +22,6 @@ h1, h2, h3 {
   background-color: #ffffff;
   border-bottom: 1px solid #e4e4e4;
   padding: 1rem 2rem;
-  position: relative;
 }
 
 .nav-container {
@@ -31,6 +30,7 @@ h1, h2, h3 {
   align-items: center;
 }
 
+/* Logo */
 .logo {
   font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
@@ -46,8 +46,8 @@ h1, h2, h3 {
   display: flex; /* always visible */
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 22px;
+  width: 25px;
+  height: 20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -57,7 +57,7 @@ h1, h2, h3 {
 #menu-toggle .bar {
   height: 3px;
   width: 100%;
-  background-color: #607d5f;
+  background-color: #607d5f; /* sage green bars */
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -72,29 +72,30 @@ h1, h2, h3 {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ==========================
-   NAV LINKS
-========================== */
+/* Navigation Menu */
 .nav-links {
-  display: none; /* hidden by default on all screen sizes */
-  flex-direction: column;
-  background-color: #ffffff;
-  position: absolute;
-  top: 60px; /* just below hamburger */
-  right: 10px;
-  width: 220px;
-  padding: 1rem;
-  border: 1px solid #e4e4e4;
-  border-radius: 6px;
-  z-index: 1050;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  transition: max-height 0.3s ease;
 }
 
-.nav-links li {
-  margin-bottom: 0.5rem;
-}
-
+/* Mobile menu hidden by default */
 .nav-links.active {
   display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+/* Nav links style */
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 
 /* ==========================
@@ -139,6 +140,89 @@ h1, h2, h3 {
 }
 
 /* ==========================
-   OTHER STYLES (SERVICES, FOOTER, ETC.)
-   Keep unchanged
+   SERVICE AREA
 ========================== */
+.service-area {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.3rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(90deg, #66d3a2, #f7a1b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================
+   SERVICES GRID
+========================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.service-box {
+  background-color: #fff;
+  border: 2px solid #f0e9e4;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #2d5243;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* ==========================
+   CONSULTATION SECTION
+========================== */
+.consultation .container {
+  text-align: center;
+  padding: 2rem;
+  background: #fdf9f5;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+.footer {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e4e4e4;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+}
+
+/* ==========================
+   MOBILE ADJUSTMENTS
+========================== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .desktop-book-btn {
+    display: none;
+  }
+}
