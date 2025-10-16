@@ -22,6 +22,8 @@ h1, h2, h3 {
   background-color: #ffffff;
   border-bottom: 1px solid #e4e4e4;
   padding: 1rem 2rem;
+  position: relative;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -43,7 +45,7 @@ h1, h2, h3 {
    HAMBURGER MENU
 ========================== */
 #menu-toggle {
-  display: flex; /* always visible */
+  display: none; /* hidden on desktop, shown on mobile */
   flex-direction: column;
   justify-content: space-between;
   width: 25px;
@@ -80,14 +82,40 @@ h1, h2, h3 {
   margin: 0;
   padding: 0;
   flex-direction: row;
-  transition: max-height 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* Mobile menu hidden by default */
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.5rem;
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 0 0 12px 12px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .desktop-book-btn {
+    display: none;
+  }
+
+  .mobile-book-btn {
+    display: block;
+    margin-top: 1rem;
+  }
 }
 
 /* Nav links style */
@@ -160,69 +188,3 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
-}
-
-.service-box {
-  background-color: #fff;
-  border: 2px solid #f0e9e4;
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: #2d5243;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-/* ==========================
-   CONSULTATION SECTION
-========================== */
-.consultation .container {
-  text-align: center;
-  padding: 2rem;
-  background: #fdf9f5;
-  border-radius: 12px;
-  margin-top: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-/* ==========================
-   FOOTER
-========================== */
-.footer {
-  text-align: center;
-  padding: 1.5rem 2rem;
-  background-color: #ffffff;
-  border-top: 1px solid #e4e4e4;
-  font-family: 'Lato', sans-serif;
-  color: #333;
-}
-
-/* ==========================
-   MOBILE ADJUSTMENTS
-========================== */
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    width: 100%;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .desktop-book-btn {
-    display: none;
-  }
-} 
