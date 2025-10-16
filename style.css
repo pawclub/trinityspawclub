@@ -48,7 +48,7 @@ h1, h2, h3 {
   font-size: 2.5rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: #1d7764; /* sage green text */
+  color: #1d7764; /* solid sage green */
 }
 
 .hero p.hero-subtext {
@@ -59,8 +59,8 @@ h1, h2, h3 {
 }
 
 .btn-secondary {
-  background-color: #ffffff; /* keep button white */
-  color: #f7a1b5; /* optional: blush pink text for contrast */
+  background-color: #ffffff; /* white button */
+  color: #f7a1b5; /* optional blush pink text */
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
@@ -71,6 +71,20 @@ h1, h2, h3 {
 .btn-secondary:hover {
   background-color: #f7a1b5;
   color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #66d3a2; /* sage green button */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5cb88f;
 }
 
 /* ==========================
