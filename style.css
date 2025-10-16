@@ -22,6 +22,16 @@ h1, h2, h3 {
   background-color: #ffffff;
   border-bottom: 1px solid #e4e4e4;
   padding: 1rem 2rem;
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -30,6 +40,92 @@ h1, h2, h3 {
   color: #607d5f;
   user-select: none;
   text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #66d3a2; /* sage green button */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5cb88f;
+}
+
+/* ==========================
+   HAMBURGER MENU
+========================== */
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+#menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    padding: 1rem;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .desktop-book-btn {
+    display: none;
+  }
+
+  #menu-toggle {
+    display: flex;
+  }
 }
 
 /* ==========================
@@ -42,13 +138,17 @@ h1, h2, h3 {
   text-align: center;
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #66d3a2, #f7a1b5); /* sage → blush gradient */
+  border-radius: 12px;
+  margin: 2rem auto;
 }
 
-.hero h2 {
+.hero h2,
+.hero-title {
   font-size: 2.5rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: #1d7764; /* solid sage green */
+  color: #1d7764 !important; /* solid sage green */
+  margin-bottom: 1rem;
 }
 
 .hero p.hero-subtext {
@@ -73,20 +173,6 @@ h1, h2, h3 {
   color: #ffffff;
 }
 
-.btn-primary {
-  background-color: #66d3a2; /* sage green button */
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #5cb88f;
-}
-
 /* ==========================
    SERVICE AREA
 ========================== */
@@ -94,11 +180,9 @@ h1, h2, h3 {
   text-align: center;
   margin: 2rem 0;
   font-size: 1.3rem;
-  font-family: 'Poppins', sans-serif; /* chunky rounded font */
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  background: linear-gradient(90deg, #66d3a2, #f7a1b5); /* sage → blush gradient */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #1d7764; /* solid sage green */
 }
 
 /* ==========================
@@ -151,10 +235,4 @@ h1, h2, h3 {
   border-top: 1px solid #e4e4e4;
   font-family: 'Lato', sans-serif;
   color: #333;
-}
-
-/* FORCE HERO TITLE COLOR */
-.hero h2,
-.hero-title {
-  color: #1d7764 !important; /* solid sage green */
 }
