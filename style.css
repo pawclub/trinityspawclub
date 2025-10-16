@@ -59,8 +59,8 @@ h1, h2, h3 {
 }
 
 .btn-secondary {
-  background-color: #ffffff; /* keep button white */
-  color: #f7a1b5; /* optional: blush pink text for contrast */
+  background-color: #ffffff;
+  color: #f7a1b5;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
@@ -80,9 +80,9 @@ h1, h2, h3 {
   text-align: center;
   margin: 2rem 0;
   font-size: 1.3rem;
-  font-family: 'Poppins', sans-serif; /* chunky rounded font */
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  background: linear-gradient(90deg, #66d3a2, #f7a1b5); /* sage → blush gradient */
+  background: linear-gradient(90deg, #66d3a2, #f7a1b5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -138,6 +138,7 @@ h1, h2, h3 {
   font-family: 'Lato', sans-serif;
   color: #333;
 }
+
 /* ==========================
    HAMBURGER MENU
 ========================== */
@@ -158,7 +159,7 @@ h1, h2, h3 {
   width: 100%;
   background-color: #607d5f; /* sage green bars */
   border-radius: 2px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 #menu-toggle.active .bar:nth-child(1) {
@@ -171,31 +172,12 @@ h1, h2, h3 {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile Menu */
+/* ==========================
+   MOBILE MENU
+========================== */
 @media (max-width: 768px) {
   #menu-toggle {
     display: flex; /* show hamburger */
   }
 
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #ffffff;
-    flex-direction: column;
-    width: 220px;
-    border: 1px solid #e4e4e4;
-    border-radius: 6px;
-    padding: 1rem;
-    display: none;
-    z-index: 1050;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .desktop-book-btn {
-    display: none; /* hide desktop button on mobile */
-  }
-}
+  .nav-links
