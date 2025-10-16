@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">  
+<html lang="en">   
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,19 +13,16 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
     <div class="nav-container">
       <div class="logo">Trinity’s Paw Club</div>
 
-      <!-- Hamburger always visible -->
-      <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button id="menu-toggle" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
 
-      <!-- Navigation -->
       <ul class="nav-links" id="nav-menu">
         <li><a href="#hero">Home</a></li>
         <li><a href="services.html">Services</a></li>
@@ -40,7 +37,6 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="container hero-container">
       <h2 class="hero-title">Welcome to Trinity’s Paw Club</h2>
@@ -49,10 +45,8 @@
     </div>
   </section>
 
-  <!-- Service Area -->
   <p class="service-area">Proudly serving Salem, Keizer, and nearby areas in Oregon.</p>
 
-  <!-- Services Section -->
   <section id="services" class="section services-preview">
     <div class="container">
       <h2>What I Offer</h2>
@@ -66,7 +60,6 @@
     </div>
   </section>
 
-  <!-- Free Consultation Section -->
   <section id="consultation" class="section consultation">
     <div class="container consultation-container">
       <h2>Free 30-Minute Consultation</h2>
@@ -75,24 +68,21 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 Trinity’s Paw Club | Serving pets with love</p>
     </div>
   </footer>
 
-  <!-- JS: Hamburger Menu Toggle -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
 
     menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active'); // animate bars
-      navMenu.classList.toggle('active');    // show/hide menu
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking a link (mobile-friendly)
     document.querySelectorAll('.nav-links li a').forEach(link => {
       link.addEventListener('click', () => {
         if(navMenu.classList.contains('active')) {
