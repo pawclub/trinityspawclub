@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en"> 
 <head>
   <meta charset="UTF-8" />
@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Lato:wght@300;400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -88,9 +88,18 @@
     const navMenu = document.getElementById('nav-menu');
 
     menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+      menuToggle.classList.toggle('active'); // animate bars
+      navMenu.classList.toggle('active');    // show/hide menu
+    });
+
+    // Close menu when clicking a link (mobile-friendly)
+    document.querySelectorAll('.nav-links li a').forEach(link => {
+      link.addEventListener('click', () => {
+        if(navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+        }
+      });
     });
   </script>
 
