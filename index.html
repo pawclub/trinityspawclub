@@ -18,21 +18,23 @@
     <div class="nav-container">
       <div class="logo">Trinity’s Paw Club</div>
 
+      <!-- Hamburger Menu Button -->
       <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
 
+      <!-- Nav Links -->
       <nav>
-        <ul class="nav-links" id="nav-menu" role="menu" aria-hidden="true">
-          <li role="none"><a role="menuitem" href="#hero">Home</a></li>
-          <li role="none"><a role="menuitem" href="services.html">Services</a></li>
-          <li role="none"><a role="menuitem" href="about.html">About</a></li>
-          <li role="none"><a role="menuitem" href="booking.html">Booking</a></li>
-          <li role="none"><a role="menuitem" href="testimonials.html">Testimonials</a></li>
-          <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
-          <li role="none"><a role="menuitem" href="booking.html" class="btn-primary mobile-book-btn">Book a Visit</a></li>
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html" class="btn-primary mobile-book-btn">Book a Visit</a></li>
         </ul>
       </nav>
 
@@ -91,7 +93,6 @@
       const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
       menuToggle.setAttribute('aria-expanded', !expanded);
       navMenu.classList.toggle('active');
-      navMenu.setAttribute('aria-hidden', expanded);
       menuToggle.classList.toggle('active');
     });
   </script>
