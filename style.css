@@ -103,7 +103,7 @@ header {
   align-items: center;
   text-align: center;
   padding: 7rem 1.5rem 4rem;
-  background: linear-gradient(135deg, #88b098, #f7b8b4); /* sage → blush */
+  background: linear-gradient(135deg, #6b9178, #e69fa0); /* darker gradient */
   border-radius: 0 0 24px 24px;
   color: #ffffff;
 }
@@ -166,7 +166,7 @@ header {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
-  background: linear-gradient(90deg, #88b098, #f7b8b4);
+  background: linear-gradient(90deg, #6b9178, #e69fa0); /* darker gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
