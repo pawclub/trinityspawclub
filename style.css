@@ -249,11 +249,10 @@ footer {
    MOBILE NAV
 ========================== */
 @media (max-width: 768px) {
-  .nav-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+  .hero {
+    padding: 6rem 1.25rem 4rem; /* slightly shorter on mobile for better fit */
+  }
+}
   }
 
   #menu-toggle {
