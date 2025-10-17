@@ -7,7 +7,6 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 h1, h2, h3 {
@@ -16,24 +15,14 @@ h1, h2, h3 {
   margin-bottom: 0.5rem;
 }
 
-h1 {
-  font-weight: 600; /* softened from 700 to 600 */
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 /* ==========================
-   NAVIGATION
+   NAVBAR
 ========================== */
-header {
+.navbar {
   background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  position: fixed;
-  top: 0;
-  width: 100%;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 1rem 2rem;
+  position: relative;
   z-index: 1000;
 }
 
@@ -41,214 +30,216 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
 }
 
+/* Logo */
 .logo {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1.6rem;
-  color: #1d7764;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  color: #607d5f;
+  user-select: none;
+  text-decoration: none;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-.nav-links a:hover {
-  color: #e6a8a1;
-}
-
+/* ==========================
+   HAMBURGER MENU
+========================== */
 #menu-toggle {
   display: none;
   flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 28px;
+  background: none;
+  border: none;
   cursor: pointer;
-  gap: 5px;
+  z-index: 1100;
 }
 
-#menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background-color: #333;
-  border-radius: 5px;
+#menu-toggle .bar {
+  height: 4px;
+  width: 100%;
+  background-color: #607d5f;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.btn-primary {
-  background-color: #1d7764;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+#menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+#menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.btn-primary:hover {
-  background-color: #155d4e;
+/* Navigation Menu */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #1d7764;
 }
 
 /* ==========================
    HERO SECTION
 ========================== */
 .hero {
-  padding: 7rem 1.5rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background-color: #f4f3ef;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #66d3a2, #f7a1b5);
 }
 
-.hero-title {
+.hero h2 {
   font-size: 2.4rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* slightly less bold */
   color: #1d7764;
-  font-weight: 600; /* softened */
-  margin-bottom: 0.8rem;
 }
 
-.hero-subtext {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto;
+.hero p.hero-subtext {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem 0;
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #f7a1b5;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f7a1b5;
+  color: #ffffff;
 }
 
 /* ==========================
-   SERVICES PREVIEW
+   SERVICE AREA
 ========================== */
-.services-preview {
-  padding: 4rem 1.5rem;
+.service-area {
   text-align: center;
+  margin: 2rem 0;
+  font-size: 1.3rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(90deg, #66d3a2, #f7a1b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.services-preview h2 {
-  color: #1d7764;
-  margin-bottom: 2rem;
-}
-
-.service-cards {
+/* ==========================
+   SERVICES GRID
+========================== */
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.service-card {
+.service-box {
   background-color: #fff;
+  border: 2px solid #f0e9e4;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 2rem 1.5rem;
-  transition: transform 0.2s ease;
+  padding: 1.5rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #2d5243;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-}
-
-.service-card h3 {
-  color: #1d7764;
-  margin-bottom: 0.5rem;
-}
-
-.service-card p {
-  color: #666;
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 /* ==========================
    CONSULTATION SECTION
 ========================== */
-.consultation {
-  background-color: #e9f0ec;
-  padding: 3rem 1.5rem;
+.consultation .container {
   text-align: center;
-}
-
-.consultation h2 {
-  color: #1d7764;
-}
-
-.consultation .btn-primary {
-  background-color: #e6a8a1;
-  color: #fff;
-  margin-top: 1rem;
-}
-
-.consultation .btn-primary:hover {
-  background-color: #d8928a;
+  padding: 2rem;
+  background: #fdf9f5;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* ==========================
    FOOTER
 ========================== */
-footer {
-  background-color: #ffffff;
-  padding: 2rem 1.5rem;
+.footer {
   text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ddd;
+  padding: 1.5rem 2rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e4e4e4;
+  font-family: 'Lato', sans-serif;
+  color: #333;
 }
 
 /* ==========================
-   MOBILE NAV FIX
+   MOBILE ADJUSTMENTS
 ========================== */
 @media (max-width: 768px) {
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
   .nav-container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: relative;
   }
 
   #menu-toggle {
     display: flex;
-    order: 3;
-    margin-left: auto;
-  }
-
-  .logo {
-    order: 1;
   }
 
   .nav-links {
     display: none !important;
     flex-direction: column;
-    width: 92vw;
-    max-width: 340px;
-    background-color: #ffffff;
     position: absolute;
-    top: calc(100% + 8px);
-    right: 12px;
-    left: auto;
-    padding: 1rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    border-radius: 12px;
-    gap: 0.8rem;
-    z-index: 1050;
-    overflow: visible;
+    top: 65px;
+    right: 0;
+    left: 0; /* ensures full width */
+    background-color: #ffffff;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 0 0 12px 12px;
+    gap: 1rem;
+    text-align: center;
   }
 
   .nav-links.active {
     display: flex !important;
-    animation: slideIn 180ms ease-out;
-  }
-
-  @keyframes slideIn {
-    from { transform: translateY(-6px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
   }
 
   .nav-links li a {
     display: block;
-    padding: 0.8rem 0.9rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 100%;
   }
 
   .desktop-book-btn {
@@ -257,30 +248,11 @@ footer {
 
   .mobile-book-btn {
     display: inline-block;
-    text-align: center;
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  .nav-links .mobile-book-btn.btn-primary {
-    display: block;
-    background: #607d5f;
+    background-color: #66d3a2;
     color: #fff;
+    padding: 0.75rem 1.5rem;
     border-radius: 8px;
-    padding: 0.6rem 0.75rem;
-    font-weight: 700;
     text-decoration: none;
-  }
-
-  .hero {
-    padding: 3rem 1.25rem;
-  }
-
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-subtext {
-    font-size: 1rem;
+    font-weight: 700;
   }
 }
