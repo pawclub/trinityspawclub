@@ -17,7 +17,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-weight: 600; /* softened from 700 to 600 */
+  font-weight: 600;
 }
 
 a {
@@ -91,30 +91,63 @@ header {
 }
 
 /* ==========================
-   HERO SECTION
+   HERO SECTION (RESTORED AESTHETIC)
 ========================== */
 .hero {
-  padding: 7rem 1.5rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background-color: #f4f3ef;
+  padding: 7rem 1.5rem 4rem;
+  background: linear-gradient(135deg, #66d3a2, #f7a1b5); /* soft sage to blush */
+  border-radius: 0 0 24px 24px;
+  color: #ffffff;
 }
 
 .hero-title {
   font-size: 2.4rem;
+  font-weight: 600;
   color: #1d7764;
-  font-weight: 600; /* softened */
   margin-bottom: 0.8rem;
 }
 
 .hero-subtext {
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.2rem;
+  color: #ffffff;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #f7a1b5;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f7a1b5;
+  color: #ffffff;
 }
 
 /* ==========================
-   SERVICES PREVIEW
+   SERVICE AREA
+========================== */
+.service-area {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.3rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(90deg, #66d3a2, #f7a1b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================
+   SERVICES GRID
 ========================== */
 .services-preview {
   padding: 4rem 1.5rem;
@@ -135,15 +168,16 @@ header {
 }
 
 .service-card {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   padding: 2rem 1.5rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .service-card h3 {
@@ -159,9 +193,12 @@ header {
    CONSULTATION SECTION
 ========================== */
 .consultation {
-  background-color: #e9f0ec;
+  background-color: #fdf9f5;
   padding: 3rem 1.5rem;
   text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin: 2rem 1.5rem;
 }
 
 .consultation h2 {
@@ -169,13 +206,13 @@ header {
 }
 
 .consultation .btn-primary {
-  background-color: #e6a8a1;
+  background-color: #66d3a2; /* sage green */
   color: #fff;
   margin-top: 1rem;
 }
 
 .consultation .btn-primary:hover {
-  background-color: #d8928a;
+  background-color: #549f7c;
 }
 
 /* ==========================
@@ -215,11 +252,11 @@ footer {
     order: 1;
   }
 
-  /* Updated flexible mobile menu */
+  /* Flexible mobile menu */
   .nav-links {
     display: none !important;
     flex-direction: column;
-    width: 90%;            /* flexible width for all mobiles */
+    width: 90%;            /* flexible width */
     max-width: 340px;
     background-color: #ffffff;
     position: absolute;
@@ -236,7 +273,7 @@ footer {
 
   .nav-links li a {
     display: block;
-    padding: 0.8rem 1rem;  /* more horizontal padding so text doesn't get cut off */
+    padding: 0.8rem 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
