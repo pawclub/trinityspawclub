@@ -7,12 +7,21 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
   color: #1d7764;
   margin-bottom: 0.5rem;
+}
+
+/* containers */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 /* ==========================
@@ -30,6 +39,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 /* Logo */
@@ -39,13 +49,16 @@ h1, h2, h3 {
   color: #607d5f;
   user-select: none;
   text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }
 
 /* ==========================
    HAMBURGER MENU
 ========================== */
+/* base hidden on desktop */
 #menu-toggle {
-  display: none; /* hidden on desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 35px;      /* bigger */
@@ -54,27 +67,38 @@ h1, h2, h3 {
   border: none;
   cursor: pointer;
   z-index: 1100;
+  padding: 0;
 }
 
+/* bars */
 #menu-toggle .bar {
   height: 4px;      /* thicker bars */
   width: 100%;
   background-color: #607d5f; /* sage green bars */
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  display: block;
 }
 
+/* active state transforms */
 #menu-toggle.active .bar:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
 }
 #menu-toggle.active .bar:nth-child(2) {
   opacity: 0;
+  transform: translateX(-10px);
 }
 #menu-toggle.active .bar:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Navigation Menu */
+/* keyboard focus */
+#menu-toggle:focus {
+  outline: 3px solid rgba(96,125,95,0.15);
+  border-radius: 6px;
+}
+
+/* Navigation Menu - desktop */
 .nav-links {
   list-style: none;
   margin: 0;
@@ -82,6 +106,7 @@ h1, h2, h3 {
   display: flex; /* desktop default */
   flex-direction: row;
   gap: 1.5rem;
+  align-items: center;
 }
 
 /* Nav links style */
@@ -90,6 +115,34 @@ h1, h2, h3 {
   color: #333;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
+  padding: 0.25rem 0.35rem;
+  border-radius: 6px;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  background: rgba(96,125,95,0.06);
+  outline: none;
+}
+
+/* primary button (desktop) */
+.btn-primary {
+  background: #607d5f;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.desktop-book-btn {
+  margin-left: 1rem;
+}
+
+/* mobile book button (hidden on desktop) */
+.mobile-book-btn {
+  display: none;
 }
 
 /* ==========================
@@ -104,15 +157,16 @@ h1, h2, h3 {
   background: linear-gradient(135deg, #66d3a2, #f7a1b5);
 }
 
-.hero h2 {
-  font-size: 2.5rem;
+.hero-title {
+  font-size: 2.2rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #1d7764;
+  margin: 0;
 }
 
 .hero p.hero-subtext {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   margin: 1rem 0 2rem 0;
   font-family: 'Lato', sans-serif;
   color: #ffffff;
@@ -128,9 +182,9 @@ h1, h2, h3 {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.btn-secondary:hover {
-  background-color: #f7a1b5;
-  color: #ffffff;
+.btn-secondary:hover,
+.btn-primary:hover {
+  transform: translateY(-2px);
 }
 
 /* ==========================
@@ -139,7 +193,7 @@ h1, h2, h3 {
 .service-area {
   text-align: center;
   margin: 2rem 0;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   background: linear-gradient(90deg, #66d3a2, #f7a1b5);
@@ -205,35 +259,93 @@ h1, h2, h3 {
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: row;
-    justify-content: space-between; /* keep hamburger on right */
+    justify-content: space-between; /* logo left, hamburger right */
     align-items: center;
+    position: relative;
   }
 
+  /* show hamburger on mobile */
   #menu-toggle {
     display: flex;
+    order: 3;
+    margin-left: auto; /* pushes it to the right */
   }
 
+  /* make sure logo stays left */
+  .logo {
+    order: 1;
+  }
+
+  /* nav-links become a right-side dropdown panel */
   .nav-links {
-    display: none !important; /* force hide on mobile */
+    display: none !important; /* hidden by default */
     flex-direction: column;
-    width: 100%;
+    width: 260px;
     background-color: #ffffff;
     position: absolute;
-    top: 60px;
-    right: 0; /* aligned to right */
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-radius: 0 0 12px 12px;
-    gap: 1rem;
+    top: 64px;           /* sits below navbar */
+    right: 1rem;         /* aligned to the right side */
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border-radius: 12px;
+    gap: 0.8rem;
+    z-index: 1050;
   }
 
   .nav-links.active {
     display: flex !important;
+    animation: slideIn 180ms ease-out;
   }
 
+  @keyframes slideIn {
+    from { transform: translateY(-6px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+
+  /* full-width link styles for touch */
+  .nav-links li a {
+    display: block;
+    padding: 0.6rem 0.8rem;
+  }
+
+  /* hide desktop book button on mobile */
   .desktop-book-btn {
     display: none;
   }
 
+  /* show mobile book button */
   .mobile-book-btn {
-    display:
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  /* make the mobile book link look like a button */
+  .nav-links .mobile-book-btn.btn-primary {
+    display: block;
+    background: #607d5f;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.6rem 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* adjust hero padding on small screens */
+  .hero {
+    padding: 3rem 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero p.hero-subtext {
+    font-size: 1rem;
+  }
+}
+
+/* small improvements - focus outlines for accessibility */
+a:focus,
+button:focus
