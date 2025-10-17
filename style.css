@@ -109,13 +109,13 @@ header {
 }
 
 .hero-title {
-  font-size: 2.4rem;
-  font-weight: 600;
+  font-size: 2.8rem; /* bigger */
+  font-weight: 500; /* less bold */
   color: #4b5f4b; /* slightly darker sage */
-  text-shadow: 0 0 6px #f9c5c2; /* lighter soft blush outline */
+  text-shadow: 0 0 6px #f9c5c2; /* soft blush outline */
   margin-bottom: 0.8rem;
   line-height: 1.2;
-}
+
 }
 
 .hero-subtext {
