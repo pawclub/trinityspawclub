@@ -246,14 +246,22 @@ footer {
 }
 
 /* ==========================
-   MOBILE NAV
+   HERO SECTION - DESKTOP
+========================== */
+.hero {
+  padding: 10rem 1.5rem 6rem; /* top 10rem, bottom 6rem -> taller section */
+  text-align: center;
+  background: linear-gradient(135deg, #66d3a2, #f7a1b5); /* keep your gradient */
+}
+
+/* ==========================
+   HERO SECTION - MOBILE
 ========================== */
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem 1.25rem 4rem; /* slightly shorter on mobile for better fit */
+    padding: 7rem 1.25rem 5rem; /* slightly shorter for mobile */
   }
 }
-  }
 
   #menu-toggle {
     display: flex;
