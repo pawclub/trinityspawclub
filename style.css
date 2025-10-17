@@ -102,21 +102,19 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 7rem 1.5rem 4rem;
-  background: linear-gradient(135deg, #6b9178, #e69fa0); /* darker gradient */
+  padding: 10rem 1.5rem 6rem; /* taller hero */
+  background: linear-gradient(135deg, #5a7c63, #d18696); /* darker gradient */
   border-radius: 0 0 24px 24px;
   color: #ffffff;
 }
+
 .hero-title {
   font-size: 2.4rem;
   font-weight: 600;
-  color: #4d674f; /* darker sage green */
+  color: #4b5f4b; /* slightly darker sage */
   text-shadow: 0 0 6px #f7b8b4; /* soft blush outline */
   margin-bottom: 0.8rem;
   line-height: 1.2;
-}
-
-
 }
 
 .hero-subtext {
@@ -157,14 +155,19 @@ header {
    SERVICES PREVIEW / "What I Offer"
 ========================== */
 .services-preview {
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
   text-align: center;
+  background-color: #f4f3ef; /* subtle background to pop cards */
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+  margin: 2rem auto;
+  max-width: 1200px;
 }
 
 .services-preview h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -175,29 +178,27 @@ header {
 
 .service-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
 }
 
 .service-card {
   background-color: #ffffff;
   border-radius: 16px;
   border: 2px solid #f0e9e4;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
   padding: 2.5rem 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
 .service-card h3 {
   color: #f7b8b4;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-bottom: 0.8rem;
 }
 
@@ -246,22 +247,20 @@ footer {
 }
 
 /* ==========================
-   HERO SECTION - DESKTOP
-========================== */
-.hero {
-  padding: 10rem 1.5rem 6rem; /* top 10rem, bottom 6rem -> taller section */
-  text-align: center;
-  background: linear-gradient(135deg, #66d3a2, #f7a1b5); /* keep your gradient */
-}
-
-/* ==========================
    HERO SECTION - MOBILE
 ========================== */
 @media (max-width: 768px) {
   .hero {
     padding: 7rem 1.25rem 5rem; /* slightly shorter for mobile */
   }
-}
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+  }
 
   #menu-toggle {
     display: flex;
@@ -321,17 +320,5 @@ footer {
     padding: 0.6rem 0.75rem;
     font-weight: 700;
     text-decoration: none;
-  }
-
-  .hero {
-    padding: 3rem 1.25rem;
-  }
-
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-subtext {
-    font-size: 1rem;
   }
 }
