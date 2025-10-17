@@ -110,10 +110,10 @@ header {
 .hero-title {
   font-size: 2.4rem;
   font-weight: 600;
-  color: #3e5c46; /* very dark sage green */
+  color: #607d5f;
+  text-shadow: 0 0 6px #f7b8b4; /* soft blush outline */
   margin-bottom: 0.8rem;
   line-height: 1.2;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.25); /* subtle glow/shadow to pop */
 }
 
 
