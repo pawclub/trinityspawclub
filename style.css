@@ -153,7 +153,6 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 /* ==========================
    SERVICES PREVIEW / "What I Offer"
 ========================== */
@@ -163,9 +162,9 @@ header {
 }
 
 .services-preview h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -174,46 +173,57 @@ header {
   -webkit-text-fill-color: transparent;
 }
 
+/* Service cards container with more visually appealing layout */
 .service-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem; /* more space between cards */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem; /* more spacing for breathing room */
   max-width: 1100px;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
+/* Individual service card styling */
 .service-card {
   background-color: #ffffff;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 2px solid #f0e9e4;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* slightly deeper shadow */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* deeper shadow for pop */
   padding: 2.5rem 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   text-align: center;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12); /* more hover pop */
-  background: linear-gradient(145deg, #f9f7f2, #f7e9e4); /* subtle hover gradient */
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  background: linear-gradient(145deg, #f9f7f2, #f7e9e4); /* subtle gradient on hover */
 }
 
+/* Service card headings */
 .service-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #f7b8b4; /* soft blush */
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+/* Service card descriptions */
 .service-card p {
   color: #4a4a4a;
-  font-size: 1rem;
-  line-height: 1.6; /* slightly taller spacing */
+  font-size: 1.05rem;
+  line-height: 1.6;
   margin: 0 auto;
-  max-width: 220px; /* keeps text contained nicely */
+  max-width: 220px; /* keeps text concise */
+}
+
+/* Optional: small icon or image above heading */
+.service-card img {
+  max-width: 60px;
+  margin-bottom: 1rem;
+}
 }
 
 /* ==========================
