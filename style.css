@@ -215,16 +215,17 @@ footer {
     order: 1;
   }
 
+  /* Updated flexible mobile menu */
   .nav-links {
     display: none !important;
     flex-direction: column;
-    width: 92vw;
+    width: 90%;            /* flexible width for all mobiles */
     max-width: 340px;
     background-color: #ffffff;
     position: absolute;
     top: calc(100% + 8px);
-    right: 12px;
-    left: auto;
+    left: 50%;             /* center horizontally */
+    transform: translateX(-50%);
     padding: 1rem;
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     border-radius: 12px;
@@ -233,22 +234,21 @@ footer {
     overflow: visible;
   }
 
+  .nav-links li a {
+    display: block;
+    padding: 0.8rem 1rem;  /* more horizontal padding so text doesn't get cut off */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .nav-links.active {
     display: flex !important;
-    animation: slideIn 180ms ease-out;
   }
 
   @keyframes slideIn {
     from { transform: translateY(-6px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
-  }
-
-  .nav-links li a {
-    display: block;
-    padding: 0.8rem 0.9rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .desktop-book-btn {
