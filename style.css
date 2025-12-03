@@ -179,7 +179,7 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem; /* less spacing */
-  max-width: 1000px;
+  max-width: 850px;
   margin: 0 auto;
   padding-top: 2rem;
 }
