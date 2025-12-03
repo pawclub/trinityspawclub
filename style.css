@@ -357,3 +357,39 @@ footer {
     text-decoration: none;
   } 
 } /* closes @media */
+} /* closes @media (max-width: 768px) */
+
+/* ==========================
+   MOBILE PHONES - SMALL SCREENS
+========================== */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtext {
+    font-size: 1.1rem;
+  }
+
+  .services-preview h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-cards {
+    gap: 1rem;
+  }
+
+  .service-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+    max-width: 220px;
+  }
+}
