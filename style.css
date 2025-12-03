@@ -172,6 +172,7 @@ header {
   background: linear-gradient(90deg, #88b098, #f7b8b4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
 
 /* Service cards container with more visually appealing layout */
 .service-cards {
