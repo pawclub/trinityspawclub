@@ -157,7 +157,7 @@ header {
    SERVICES PREVIEW / "What I Offer"
 ========================== */
 .services-preview {
-  padding: 3rem 2rem;
+  padding: 3rem 2rem; /* reduce top padding from 5rem to 3rem */
   text-align: center;
   background: #ffffff;
   border-radius: 18px;
