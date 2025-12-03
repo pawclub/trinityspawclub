@@ -280,13 +280,12 @@ footer {
   color: #4a4a4a;
   border-top: 1px solid #ddd;
 }
-
 /* ==========================
    HERO SECTION - MOBILE
 ========================== */
 @media (max-width: 768px) {
   .hero {
-    padding: 7rem 1.25rem 5rem; /* slightly shorter for mobile */
+    padding: 7rem 1.25rem 5rem; /* slightly shorter for tablets and small devices */
   }
 
   .hero-title {
@@ -356,11 +355,10 @@ footer {
     font-weight: 700;
     text-decoration: none;
   } 
-} /* closes @media */
-} /* closes @media (max-width: 768px) */
+}
 
 /* ==========================
-   MOBILE PHONES - SMALL SCREENS
+   SMALL MOBILE PHONES
 ========================== */
 @media (max-width: 480px) {
   .hero-title {
@@ -373,11 +371,11 @@ footer {
 
   .services-preview h2 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; /* brings the "What I Offer" heading higher */
   }
 
   .service-cards {
-    gap: 1rem;
+    gap: 1rem; /* reduces spacing between cards */
   }
 
   .service-card {
@@ -390,6 +388,6 @@ footer {
 
   .service-card p {
     font-size: 1rem;
-    max-width: 220px;
+    max-width: 220px; /* prevents overly wide text on small screens */
   }
 }
