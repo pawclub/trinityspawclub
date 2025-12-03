@@ -357,3 +357,6 @@ footer {
     text-decoration: none;
   } 
 } /* closes @media */
+body {
+  outline: 5px solid red !important;
+}
