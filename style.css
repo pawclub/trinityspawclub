@@ -165,16 +165,14 @@ header {
   max-width: 1200px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
-
 .services-preview h2 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: linear-gradient(90deg, #6b9178, #e69fa0); /* darker gradient */
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #88b098, #f7b8b4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
 }
 
 /* Service cards container with more visually appealing layout */
@@ -206,21 +204,21 @@ header {
 
 /* Service card headings */
 .service-card h3 {
-  font-size: 1.5rem;
-  color: #f7b8b4; /* soft blush */
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #88b098, #e69fa0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Service card descriptions */
 .service-card p {
-  color: #4a4a4a;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin: 0 auto;
-  max-width: 220px; /* keeps text concise */
+  color: #6b6b6b;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 260px;
+  opacity: 0.9;
 }
 
 /* Optional: small icon or image above heading */
